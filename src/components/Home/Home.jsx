@@ -19,7 +19,7 @@ function Home() {
       <div className="home__image">
         <img
           className="image"
-          src="../../image/perfil.png"
+          src="../../../public/Image/perfil.png"
           alt="Samuel Lazarin"
         />
       </div>
