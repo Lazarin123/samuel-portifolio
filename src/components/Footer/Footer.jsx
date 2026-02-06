@@ -15,7 +15,6 @@ function Footer() {
           <small>Construído com:</small>
           <div className="footer__badges">
             <span className="badge">React</span>
-            <span className="badge">JavaScript</span>
             <span className="badge">Sass</span>
           </div>
         </div>

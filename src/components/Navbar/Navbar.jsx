@@ -15,10 +15,10 @@ function Navbar() {
         </li>
         <li>
           <a
-            href="https://github.com/Lazarin123/portifolio-samuel"
+            href="https://github.com/Lazarin123/samuel-portifolio"
             target="_blank"
           >
-            Código
+            Code Project
           </a>
         </li>
         <li>
