@@ -1,0 +1,59 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.footer {
+  background-color: darken($color-background-dark, 2%); // Um pouco mais escuro que o fundo principal
+  padding: 2rem 0;
+  border-top: 1px solid rgba($color-secondary-lilac, 0.1); // Linha sutil no topo
+  margin-top: 0rem;
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    @include flex-center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 2rem;
+  }
+
+  &__copyright {
+    color: $color-text-muted;
+    font-size: 0.9rem;
+
+    span {
+      color: $color-primary-purple;
+      font-weight: 500;
+    }
+  }
+
+  &__techs {
+    @include flex-center;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    small {
+      color: $color-text-muted;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.7rem;
+    }
+  }
+
+  &__badges {
+    display: flex;
+    gap: 0.8rem;
+
+    .badge {
+      background-color: rgba($color-primary-purple, 0.1);
+      color: $color-secondary-lilac;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      border: 1px solid rgba($color-primary-purple, 0.3);
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    text-align: center;
+  }
+}

@@ -1,0 +1,19 @@
+@import './abstracts/variables';
+@import './abstracts/mixins';
+@import './base/reset';
+@import './base/typography';
+
+// Global styles (if any, e.g., container for sections)
+.app {
+  overflow-x: hidden; // Previne rolagem horizontal indesejada
+}
+
+main {
+  padding-top: 5rem; // Espaço para a navbar fixa
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}

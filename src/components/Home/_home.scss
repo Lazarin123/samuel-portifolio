@@ -1,0 +1,67 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.home {
+  @include flex-center;
+  flex-direction: row;
+  min-height: calc(100vh - 5rem); // Ocupa a altura da tela menos a navbar
+  text-align: left;
+  gap: 4rem;
+
+  &__content {
+    max-width: 600px;
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      .highlight {
+        color: $color-primary-purple;
+      }
+    }
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: $color-text-muted;
+    }
+  }
+
+  &__button {
+    @include button-style;
+    background-color: $color-primary-purple;
+    color: $color-text-light;
+    &:hover {
+      background-color: darken($color-primary-purple, 10%);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__image {
+    // Espaço para sua imagem/avatar
+    width: 370px;
+    height: 370px;
+    background-color: $color-secondary-lilac; // Placeholder
+    border-radius: 50%;
+    @include flex-center;
+    font-size: 2rem;
+    color: $color-background-dark;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    text-align: center;
+    .home__content {
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+    }
+    .home__image {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}

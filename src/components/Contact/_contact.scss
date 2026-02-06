@@ -1,0 +1,64 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+.contact {
+  text-align: center;
+  h2 {
+    margin-bottom: 2rem;
+    color: $color-primary-purple;
+  }
+  p {
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__links {
+    @include flex-center;
+    gap: 3rem;
+    flex-wrap: wrap; // Garante que os ícones quebrem a linha em telas pequenas
+  }
+
+  &__icon-link {
+    @include flex-center;
+    flex-direction: column;
+    color: $color-text-purpleLight;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: oklch(49.1% 0.27 292.581);
+      transform: translateY(-5px);
+      text-decoration: none;
+    }
+
+    .icon-placeholder {
+      font-size: 3rem; // Tamanho do ícone
+      margin-bottom: 0.5rem;
+      border: 2px solid $color-secondary-lilac;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      @include flex-center;
+      color: $color-secondary-lilac;
+    }
+
+    span {
+      margin-top: 0.5rem;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    &__links {
+      gap: 1.5rem;
+    }
+    &__icon-link {
+      .icon-placeholder {
+        font-size: 2.5rem;
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@mixin device($size) {
+  @if $size == mobile {
+    @media screen and (max-width: #{$mobile}) { @content; }
+  } @else if $size == tablet {
+    @media screen and (max-width: #{$tablet}) { @content; }
+  } @else if $size == notebook {
+    @media screen and (max-width: #{$notebook}) { @content; }
+  }
+}
+
+@mixin device($size) {
+  @if $size == mobile-small {
+    @media screen and (max-width: #{$mobile-small}) { @content; }
+  } @else if $size == tablet {
+    @media screen and (max-width: #{$tablet}) { @content; }
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-style {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none; // Para botões que são links
+}
