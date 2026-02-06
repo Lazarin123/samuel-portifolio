@@ -17,11 +17,7 @@ function Home() {
         </a>
       </div>
       <div className="home__image">
-        <img
-          className="image"
-          src="../../../public/Image/perfil.png"
-          alt="Samuel Lazarin"
-        />
+        <img className="image" src="./Image/perfil.png" alt="Samuel Lazarin" />
       </div>
     </section>
   );
