@@ -14,14 +14,6 @@ function Navbar() {
           <a href="#home">Home</a>
         </li>
         <li>
-          <a
-            href="https://github.com/Lazarin123/samuel-portifolio"
-            target="_blank"
-          >
-            Code Project
-          </a>
-        </li>
-        <li>
           <a href="#about">Sobre Mim</a>
         </li>
         <li>
