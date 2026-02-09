@@ -1,8 +1,8 @@
-@import '../../styles/abstracts/variables';
-@import '../../styles/abstracts/mixins';
+// @use "../../styles/abstracts/variables" as *;
+// @use '../../styles/abstracts/mixins';
 
 .footer {
-  background-color: darken($color-background-dark, 2%); // Um pouco mais escuro que o fundo principal
+  background-color: color.adjust($color-background-dark, $lightness: -2%); // Um pouco mais escuro que o fundo principal
   padding: 2rem 0;
   border-top: 1px solid rgba($color-secondary-lilac, 0.1); // Linha sutil no topo
   margin-top: 0rem;

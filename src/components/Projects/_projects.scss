@@ -1,5 +1,5 @@
-@import '../../styles/abstracts/variables';
-@import '../../styles/abstracts/mixins';
+// @use "../../styles/abstracts/variables" as *;
+// @use '../../styles/abstracts/mixins';
 
 .projects {
   text-align: center;
@@ -17,7 +17,7 @@
 }
 
 .project-card {
-  background-color: lighten($color-background-dark, 5%);
+  background-color: color.adjust($color-background-dark, $lightness: 5%);
   border-radius: 0.8rem;
   padding: 2rem;
   text-align: left;
@@ -75,7 +75,7 @@
     background-color: $color-primary-purple;
     color: $color-text-light;
     &:hover {
-      background-color: darken($color-primary-purple, 10%);
+      background-color: color.adjust($color-primary-purple, $lightness: -10%);
       transform: translateY(-2px);
     }
 
@@ -83,7 +83,7 @@
       background-color: $color-text-muted;
       color: $color-background-dark;
       &:hover {
-        background-color: darken($color-secondary-lilac, 10%);
+        background-color: color.adjust($color-secondary-lilac, $lightness: -10%);
       }
     }
   }

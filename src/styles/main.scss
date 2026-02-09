@@ -1,7 +1,5 @@
-@import './abstracts/variables';
-@import './abstracts/mixins';
-@import './base/reset';
-@import './base/typography';
+@use './base/reset';
+@use './base/typography';
 
 // Global styles (if any, e.g., container for sections)
 .app {

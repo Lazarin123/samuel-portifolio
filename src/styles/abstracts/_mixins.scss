@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 @mixin device($size) {
   @if $size == mobile {
     @media screen and (max-width: #{$mobile}) { @content; }
