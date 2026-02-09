@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
+  base: "/samuel-portifolio/",
   plugins: [react()],
-  base: "/samuel-portifolio/", 
   resolve: {
     alias: {
       // Isso cria o atalho '@' que aponta para a pasta 'src'
