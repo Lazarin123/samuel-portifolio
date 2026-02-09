@@ -1,6 +1,3 @@
-// @use "../../styles/abstracts/variables" as *;
-// @use '../../styles/abstracts/mixins';
-
 .footer {
   background-color: color.adjust($color-background-dark, $lightness: -2%); // Um pouco mais escuro que o fundo principal
   padding: 2rem 0;
