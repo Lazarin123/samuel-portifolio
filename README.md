@@ -24,16 +24,15 @@ O projeto utiliza uma paleta de cores moderna baseada em tons de roxo vibrante, 
 
 ---
 
-<!--
 ## 📸 Pré-visualização
 
 _(Aqui você pode adicionar o link do seu site quando ele estiver no ar)_
 
-> [Acesse meu portfólio online aqui](#)
+> [Acesse meu portfólio online aqui](https://lazarin123.github.io/samuel-portifolio/)
 
---- -->
+---
 
-## ⚖️ Licença e Direitos Autorais
+## ⚖️ Licença e Direitos Autorais-
 
 **Copyright (c) 2026 Samuel Lazarin. Todos os direitos reservados.**
 
