@@ -49,6 +49,22 @@ const projects = [
       "https://github.com/Lazarin123/Projeto-mudancas-de-cores?tab=readme-ov-file",
     liveDemo: "https://lazarin123.github.io/Projeto-mudancas-de-cores/",
   },
+  {
+    id: 7,
+    title: "PokeDex - JavaScript",
+    description:
+      "Aplicação JavaScript Master PokeDex, desenvolvida em JavaScript. Projeto desenvolvido por conta própria para praticar lógica de programação, integração de API e a paixão pelo Anime.",
+    githubLink: "https://github.com/Lazarin123/PokeDex-JS",
+    liveDemo: "https://lazarin123.github.io/PokeDex-JS/",
+  },
+  {
+    id: 8,
+    title: "Conversor de Moedas - JavaScript",
+    description:
+      "Aplicação JavaScript de Converter Moedas, desenvolvida em JavaScript. Projeto desenvolvido por conta própria para praticar lógica de programação, integração de API com o pensamento de auxiliar e facilitar na hora de converter as moedas que deseja.",
+    githubLink: "https://github.com/Lazarin123/Conversor-de-Moedas-JS",
+    liveDemo: "https://lazarin123.github.io/Conversor-de-Moedas-JS/",
+  },
 ];
 
 function Projects() {
