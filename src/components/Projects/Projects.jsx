@@ -65,6 +65,14 @@ const projects = [
     githubLink: "https://github.com/Lazarin123/Conversor-de-Moedas-JS",
     liveDemo: "https://lazarin123.github.io/Conversor-de-Moedas-JS/",
   },
+  {
+    id: 9,
+    title: "FlowState - JavaScript",
+    description:
+      "Aplicação JavaScript Baseada na Técnica Pomodo, desgin minimalista e fácil de entender e mexer, timers diferentes para Foco e Pausa, com a diferença de 5 em 5 minutos para melhor qualidade. Desenvolvido por Samuel Lazarin no Intuito de ajudar a todos.",
+    githubLink: "https://github.com/Lazarin123/Projeto-FlowState",
+    liveDemo: "https://lazarin123.github.io/Projeto-FlowState/",
+  },
 ];
 
 function Projects() {
