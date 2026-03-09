@@ -3,18 +3,19 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
-  base: "/samuel-portifolio/",
+  // Se estiver em produção na Vercel, o base é '/', 
+  // caso contrário (GitHub Pages), mantém o nome do repositório.
+  base: process.env.NODE_ENV === 'production' ? '/' : '/samuel-portifolio/',
+  
   plugins: [react()],
   resolve: {
     alias: {
-      // Isso cria o atalho '@' que aponta para a pasta 'src'
       '@': path.resolve(__dirname, './src'),
     },
   },
   css: {
     preprocessorOptions: {
       scss: {
-        // IMPORTANTE: Use o alias '@' aqui para evitar erros de caminho relativo
         additionalData: `
           @use "sass:color";
           @use "@/styles/abstracts/variables" as *;

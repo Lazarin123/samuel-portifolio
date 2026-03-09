@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./_projects.scss";
+import Modal from "../Modal/modal";
+import Card from "../Card/card";
 
 const projects = [
   {
     id: 1,
     title: "Gerenciador de Tarefas - JAVA",
     description:
-      "Um projeto simples porém com um grande aprendizado e com muita lógica, onde o usuário pode criar, editar e excluir tarefas, além de marcar como concluídas.",
+      "Um projeto simples com muita lógica, onde o usuário pode criar, editar e excluir tarefas.",
+    details:
+      "Um projeto simples com muita lógica, onde o usuário pode criar, editar e excluir tarefas. Desenvolvido em Java praticando boas práticas e estilo, um aprendizado constante e que sempre buscando melhorar e assim evoluir.",
     githubLink: "https://github.com/Lazarin123/Gerenciado-de-Tarefas",
   },
   {
     id: 2,
     title: "Carnivoros e Herbívoros - JavaScript",
     description:
-      "Um projeto de lógica com JavaScript, onde simulo um jogo entre carnivoros e herbívoros. O objetivo é criar uma simulação onde os carnivoros tentam caçar os herbívoros, enquanto os herbívoros tentam sobreviver e se reproduzir.",
+      "Um projeto de lógica com JavaScript, onde simulo um jogo entre carnivoros e herbívoros.",
+    details:
+      "Um projeto voltado para o BackEnd onde temos um jogo de Carnivoros e Herbivoros, onde mostra vidas, ataques e defesas. Desenvolvido em JavaScript praticando boas práticas e estilo, um aprendizado constante e que sempre buscando melhorar e assim evoluir.",
     githubLink:
       "https://github.com/Lazarin123/js_herbivores_and_carnivores/tree/develop",
   },
@@ -21,14 +27,18 @@ const projects = [
     id: 3,
     title: "Simulador de Caixa Eletrônico - Linguagem C",
     description:
-      "Aplicação em Linguagem C para simular um caixa eletrônico, desenvolvida com C. Projeto feito por conta própria para praticar lógica de programação.",
+      "Aplicação em Linguagem C para simular um caixa eletrônico, desenvolvida com C.",
+    details:
+      "Um sistema de Caixa eletronico simples porém que me trouxe um grande aprendizado e que me ajudou a entender mais sobre a lógica de programação onde evolui e consegui desenvolver esse sistema em C, uma linguagem que me ajudou muito na hora de desenvolvimento e que sempre busco melhorar e assim evoluir com ela.",
     githubLink: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
   },
   {
     id: 4,
     title: "Jogo 2048 - JavaScript",
     description:
-      "Aplicação JavaScript do jogo 2048, desenvolvida com HTML, CSS e JavaScript. Projeto do curso de Front-End da MateAcademy.",
+      "Aplicação JavaScript do jogo 2048, desenvolvida com HTML, CSS e JavaScript.",
+    details:
+      "Um jogo interativo 2048, desenvolvido com HTML, CSS e JavaScript, na qual o objetivo é ganhar o jogo com mais pontos, o jogo constiste em você jogar através das setas do teclado, e ganha quem fizer mais pontos, um projeto na qual foi aplicado a lógica de programação, onde evolui e consegui desenvolver esse jogo em JavaScript, uma linguagem que me ajudou muito na hora de desenvolvimento e que sempre busco melhorar e assim evoluir com ela.",
     githubLink: "https://github.com/Lazarin123/Projeto-Jogo-2048",
     liveDemo: "https://lazarin123.github.io/js_2048_game/",
   },
@@ -36,7 +46,9 @@ const projects = [
     id: 5,
     title: "Landing Page - MyBike",
     description:
-      "Landing page para uma empresa de bicicletas, desenvolvida com HTML, CSS e JavaScript. Projeto do curoso de Front-End da MateAcademy.",
+      "Landing page para uma empresa de bicicletas, desenvolvida com HTML, CSS e JavaScript.",
+    details:
+      "Landing page da empresa MyBike, desenvolvida com HTML, CSS e JavaScript, um projeto na qual me aperfeiçoei em Positions, Grid e Flexbox do CSS/Sass, e assim evolui e consegui desenvolver esse projeto em JavaScript,conseguindo ter mais noções de programação e lógica.",
     githubLink: "https://github.com/Lazarin123/Landing-Page",
     liveDemo: "https://lazarin123.github.io/layout_landing-page/#",
   },
@@ -44,7 +56,9 @@ const projects = [
     id: 6,
     title: "Mudança de cor - JavaScript",
     description:
-      "Aplicação JavaScript simples para mudança de cor da página, desenvolvida em JavaScript e CSS. Projeto desenvolvido por conta própria para praticar lógica de programação.",
+      "Aplicação JavaScript simples para mudança de cor da página, desenvolvida em JavaScript e CSS.",
+    details:
+      "Um projeto bem simples mas que aprendi bastante de manipulação de eventos e botões, trazendo boas prátricas e estilo, um aprendizado constante e que sempre buscando melhorar e assim evoluir, um projeto voltado para você ver o código de uma cor cado queira utilizar, um projeto simples mas com grande aprendizado.",
     githubLink:
       "https://github.com/Lazarin123/Projeto-mudancas-de-cores?tab=readme-ov-file",
     liveDemo: "https://lazarin123.github.io/Projeto-mudancas-de-cores/",
@@ -53,7 +67,9 @@ const projects = [
     id: 7,
     title: "PokeDex - JavaScript",
     description:
-      "Aplicação JavaScript Master PokeDex, desenvolvida em JavaScript. Projeto desenvolvido por conta própria para praticar lógica de programação, integração de API e a paixão pelo Anime.",
+      "Aplicação JavaScript Master PokeDex, desenvolvida em JavaScript.",
+    details:
+      "a paixão pelo anime e por aprender com o que gosto, a pokedex desenvolvida em JavaScript, na qual tem os 151 pokémons da primeira geração na qual você consegue capturalos e velos na parte de captura, soltar, e ver todos os que faltam e todos no geral, um projeto na qual demandou conhecimento na lógica de programação e evolui e consegui desenvolver esse projeto em JavaScript.",
     githubLink: "https://github.com/Lazarin123/PokeDex-JS",
     liveDemo: "https://lazarin123.github.io/PokeDex-JS/",
   },
@@ -61,49 +77,51 @@ const projects = [
     id: 8,
     title: "Conversor de Moedas - JavaScript",
     description:
-      "Aplicação JavaScript de Converter Moedas, desenvolvida em JavaScript. Projeto desenvolvido por conta própria para praticar lógica de programação, integração de API com o pensamento de auxiliar e facilitar na hora de converter as moedas que deseja.",
+      "Aplicação JavaScript de Converter Moedas, desenvolvida em JavaScript.",
+    details:
+      "Um conversor de moedas na qual usa a integração de API, um projeto na qual demandou conhecimento em apis e lógica, um proojeto na qual você pode converter APIS em tempo real que se atualiza de 30 em 30 segundos, temos algumas moedas mais usadas para realizar as conversões.",
     githubLink: "https://github.com/Lazarin123/Conversor-de-Moedas-JS",
     liveDemo: "https://lazarin123.github.io/Conversor-de-Moedas-JS/",
   },
   {
     id: 9,
     title: "FlowState - JavaScript",
-    description:
-      "Aplicação JavaScript Baseada na Técnica Pomodo, desgin minimalista e fácil de entender e mexer, timers diferentes para Foco e Pausa, com a diferença de 5 em 5 minutos para melhor qualidade. Desenvolvido por Samuel Lazarin no Intuito de ajudar a todos.",
+    description: "Aplicação JavaScript Baseada na Técnica Pomodo.",
+    details:
+      "Uma aplicação desenvolvida e inspirada na técnica de PomoDoro, um projeto na qual demandou muita lógica de programação e foi um projeto desenvolvido para ajudar pessoas a focarem mais e assim conseguirem apprender/desenvolver mais e mais.",
     githubLink: "https://github.com/Lazarin123/Projeto-FlowState",
     liveDemo: "https://lazarin123.github.io/Projeto-FlowState/",
   },
 ];
 
 function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   return (
     <section id="projects" className="projects">
+      {selectedProject && (
+        <Modal onClose={() => setSelectedProject(null)}>
+          <Card
+            title={selectedProject.title}
+            details={selectedProject.details}
+            githubLink={selectedProject.githubLink}
+            liveDemo={selectedProject.liveDemo}
+            isExpanded={true}
+          />
+        </Modal>
+      )}
+
       <h2>Meus Projetos</h2>
       <div className="projects__grid">
         {projects.map((project) => (
-          <div key={project.id} className="project-card">
+          <div
+            key={project.id}
+            className="project-card"
+            onClick={() => setSelectedProject(project)}
+          >
             <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <div className="project-card__actions">
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-card__button"
-              >
-                Ver no GitHub
-              </a>
-              {project.liveDemo && (
-                <a
-                  href={project.liveDemo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-card__button project-card__button--demo"
-                >
-                  Demo
-                </a>
-              )}
-            </div>
+            <p>{project.description.substring(0, 100)}...</p>
+            <span className="read-more">Clique para ver detalhes</span>
           </div>
         ))}
       </div>
