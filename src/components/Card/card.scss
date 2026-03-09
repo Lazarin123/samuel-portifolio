@@ -2,7 +2,7 @@
     background-color: color.adjust($color-background-dark, $lightness: 5%);
     border-radius: 0.8rem;
     padding: 2rem;
-    color: rgb(139, 92, 173);
+    color:#cb85e3;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 1); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -82,3 +82,12 @@
         }
     }
 }
+
+.badge {
+      background-color: rgba($color-primary-purple, 0.1);
+      color: $color-secondary-lilac;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      border: 1px solid rgba($color-primary-purple, 0.3);
+    }

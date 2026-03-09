@@ -2,7 +2,9 @@ import "./card.scss";
 
 export default function Card({
   title,
+  badges,
   details,
+  image,
   githubLink,
   liveDemo,
   isExpanded,
@@ -15,8 +17,13 @@ export default function Card({
         <div className="card-details">
           <hr />
           <h4>Sobre o Projeto:</h4>
+          <div className="footer__badges">
+            <span className="badge">{badges}</span>
+          </div>
           <br />
           <p>{details}</p>
+          <hr />
+          <img src={image} alt={title} className="card-image" />
         </div>
       )}
 

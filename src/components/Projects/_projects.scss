@@ -14,7 +14,7 @@
 }
 
 .read-more {
-  color: white;
+  color: $color-text-read-more;
 }
 
 .project-card {
@@ -62,7 +62,7 @@
     color: $color-text-muted;
     margin-bottom: 1.5rem;
     flex-grow: 1;
-    color: $color-text-card;
+    color: $color-text-purpleLight;
   }
 
   &__actions {
