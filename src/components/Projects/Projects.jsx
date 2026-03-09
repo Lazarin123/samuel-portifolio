@@ -42,7 +42,8 @@ const projects = [
       "Aplicação JavaScript do jogo 2048, desenvolvida com HTML, CSS e JavaScript.",
     badges: "JavaScript" + " | " + "SCSS" + " | " + "HTML",
     details:
-      "Um jogo interativo 2048, desenvolvido com HTML, CSS e JavaScript, na qual o objetivo é ganhar o jogo com mais pontos, o jogo constiste em você jogar através das setas do teclado, e ganha quem fizer mais pontos, um projeto na qual foi aplicado a lógica de programação, onde evolui e consegui desenvolver esse jogo em JavaScript, uma linguagem que me ajudou muito na hora de desenvolvimento e que sempre busco melhorar e assim evoluir com ela.",
+      "Um jogo interativo 2048, desenvolvido com HTML, CSS e JavaScript, na qual o objetivo é ganhar o jogo com mais pontos, o jogo constiste em você jogar através das setas do teclado, e ganha quem fizer mais pontos.",
+    image: "Image/2048/2048-1.png",
     githubLink: "https://github.com/Lazarin123/Projeto-Jogo-2048",
     liveDemo: "https://lazarin123.github.io/js_2048_game/",
   },
@@ -54,6 +55,7 @@ const projects = [
     badges: "JavaScript" + " | " + "CSS/SCSS" + " | " + "HTML",
     details:
       "Landing page da empresa MyBike, desenvolvida com HTML, CSS e JavaScript, um projeto na qual me aperfeiçoei em Positions, Grid e Flexbox do CSS/Sass, e assim evolui e consegui desenvolver esse projeto em JavaScript,conseguindo ter mais noções de programação e lógica.",
+    image: "Image/MyBike/MyBike.png",
     githubLink: "https://github.com/Lazarin123/Landing-Page",
     liveDemo: "https://lazarin123.github.io/layout_landing-page/#",
   },
@@ -65,6 +67,7 @@ const projects = [
     badges: "JavaScript" + " | " + "CSS",
     details:
       "Um projeto bem simples mas que aprendi bastante de manipulação de eventos e botões, trazendo boas prátricas e estilo, um aprendizado constante e que sempre buscando melhorar e assim evoluir, um projeto voltado para você ver o código de uma cor cado queira utilizar, um projeto simples mas com grande aprendizado.",
+    image: "Image/color/Color.png",
     githubLink:
       "https://github.com/Lazarin123/Projeto-mudancas-de-cores?tab=readme-ov-file",
     liveDemo: "https://lazarin123.github.io/Projeto-mudancas-de-cores/",
@@ -76,7 +79,8 @@ const projects = [
       "Aplicação JavaScript Master PokeDex, desenvolvida em JavaScript.",
     badges: "JavaScript" + " | " + "API" + " | " + "HTML" + " | " + "CSS",
     details:
-      "a paixão pelo anime e por aprender com o que gosto, a pokedex desenvolvida em JavaScript, na qual tem os 151 pokémons da primeira geração na qual você consegue capturalos e velos na parte de captura, soltar, e ver todos os que faltam e todos no geral, um projeto na qual demandou conhecimento na lógica de programação e evolui e consegui desenvolver esse projeto em JavaScript.",
+      "a paixão pelo anime e por aprender com o que gosto, a pokedex desenvolvida em JavaScript, na qual tem os 151 pokémons da primeira geração na qual você consegue capturalos e velos na parte de captura, soltar, e ver todos os que faltam e todos no geral.",
+    image: "Image/pokedex/PokeDex2.png",
     githubLink: "https://github.com/Lazarin123/PokeDex-JS",
     liveDemo: "https://lazarin123.github.io/PokeDex-JS/",
   },
@@ -88,6 +92,7 @@ const projects = [
     badges: "JavaScript" + " | " + "API",
     details:
       "Um conversor de moedas na qual usa a integração de API, um projeto na qual demandou conhecimento em apis e lógica, um proojeto na qual você pode converter APIS em tempo real que se atualiza de 30 em 30 segundos, temos algumas moedas mais usadas para realizar as conversões.",
+    image: "Image/conversor/conversor2.png",
     githubLink: "https://github.com/Lazarin123/Conversor-de-Moedas-JS",
     liveDemo: "https://lazarin123.github.io/Conversor-de-Moedas-JS/",
   },
@@ -98,6 +103,7 @@ const projects = [
     description: "Aplicação JavaScript Baseada na Técnica Pomodo.",
     details:
       "Uma aplicação desenvolvida e inspirada na técnica de PomoDoro, um projeto na qual demandou muita lógica de programação e foi um projeto desenvolvido para ajudar pessoas a focarem mais e assim conseguirem apprender/desenvolver mais e mais.",
+    image: "Image/flowState/FlowState2.png",
     githubLink: "https://github.com/Lazarin123/Projeto-FlowState",
     liveDemo: "https://lazarin123.github.io/Projeto-FlowState/",
   },
@@ -114,6 +120,7 @@ function Projects() {
             title={selectedProject.title}
             badges={selectedProject.badges}
             details={selectedProject.details}
+            image={selectedProject.image}
             githubLink={selectedProject.githubLink}
             liveDemo={selectedProject.liveDemo}
             isExpanded={true}
