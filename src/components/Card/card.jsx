@@ -15,12 +15,11 @@ export default function Card({
 
       {isExpanded && details && (
         <div className="card-details">
-          <hr />
           <h4>Sobre o Projeto:</h4>
-          <div className="footer__badges">
+          <p className="feito">Feito com:</p>
+          <div className="badges">
             <span className="badge">{badges}</span>
           </div>
-          <br />
           <p>{details}</p>
           <hr />
           <img src={image} alt={title} className="card-image" />
@@ -28,11 +27,21 @@ export default function Card({
       )}
 
       <div className="card-links">
-        <a href={githubLink} target="_blank" rel="noopener noreferrer">
+        <a
+          href={githubLink}
+          target="_blank"
+          className="links"
+          rel="noopener noreferrer"
+        >
           GitHub
         </a>
         {liveDemo && (
-          <a href={liveDemo} target="_blank" rel="noopener noreferrer">
+          <a
+            href={liveDemo}
+            target="_blank"
+            className="links"
+            rel="noopener noreferrer"
+          >
             Live Demo
           </a>
         )}

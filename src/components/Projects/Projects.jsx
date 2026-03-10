@@ -11,7 +11,8 @@ const projects = [
       "Um projeto simples com muita lógica, onde o usuário pode criar, editar e excluir tarefas.",
     badges: "Java",
     details:
-      "Um projeto simples com muita lógica, onde o usuário pode criar, editar e excluir tarefas. Desenvolvido em Java praticando boas práticas e estilo, um aprendizado constante e que sempre buscando melhorar e assim evoluir.",
+      "Um projeto simples com muita lógica, onde o usuário pode criar, editar e excluir tarefas. Desenvolvido em Java praticando boas práticas e estilo, um aprendizado constante e que sempre buscando melhorar e assim evoluir. Abaixo está o Fluxograma do Sistema.",
+    image: "Image/gerenciador/Gerenciador.png",
     githubLink: "https://github.com/Lazarin123/Gerenciado-de-Tarefas",
   },
   {
@@ -21,7 +22,8 @@ const projects = [
       "Um projeto de lógica com JavaScript, onde simulo um jogo entre carnivoros e herbívoros.",
     badges: "JavaScript",
     details:
-      "Um projeto voltado para o BackEnd onde temos um jogo de Carnivoros e Herbivoros, onde mostra vidas, ataques e defesas. Desenvolvido em JavaScript praticando boas práticas e estilo, um aprendizado constante e que sempre buscando melhorar e assim evoluir.",
+      "Um projeto voltado para o BackEnd onde temos um jogo de Carnivoros e Herbivoros, onde mostra vidas, ataques e defesas. Desenvolvido em JavaScript praticando boas práticas e estilo. Abaixo está o fluxograma do sistema.",
+    image: "Image/CH/Carnivoros e Herbivoros.png",
     githubLink:
       "https://github.com/Lazarin123/js_herbivores_and_carnivores/tree/develop",
   },
@@ -32,7 +34,8 @@ const projects = [
       "Aplicação em Linguagem C para simular um caixa eletrônico, desenvolvida com C.",
     badges: "C",
     details:
-      "Um sistema de Caixa eletronico simples porém que me trouxe um grande aprendizado e que me ajudou a entender mais sobre a lógica de programação onde evolui e consegui desenvolver esse sistema em C, uma linguagem que me ajudou muito na hora de desenvolvimento e que sempre busco melhorar e assim evoluir com ela.",
+      "Um sistema de Caixa eletronico simples porém que me trouxe um grande aprendizado e que me ajudou a entender mais sobre a lógica de programação onde evolui e consegui desenvolver esse sistema em C,abaixo está o fluxograma do sistema.",
+    image: "Image/caixa/Simulador-Caixa.png",
     githubLink: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
   },
   {
