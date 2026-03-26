@@ -26,7 +26,7 @@ O projeto utiliza uma paleta de cores moderna baseada em tons de roxo vibrante, 
 
 ## 📸 Pré-visualização
 
-> [Acesse meu portfólio online aqui](https://lazarin123.github.io/samuel-portifolio/)
+> [Acesse meu portfólio online aqui](https://samuel-portifolio.vercel.app/)
 
 ---
 
