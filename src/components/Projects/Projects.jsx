@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../Card/Card";
+import Card from "../Card/Card.jsx";
 import "./Projects.scss";
 
 export default function Projects({ data, onProjectClick }) {
