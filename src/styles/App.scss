@@ -3,7 +3,7 @@
    ========================================= */
 
 // 1. Variáveis (Cores, fontes, temas)
-@import './abstracts/variables';
+@use './abstracts/variables';
 
 // 2. Estilos Globais (Reset, body, classes utilitárias)
-@import './base/global';
+@use './base/global';

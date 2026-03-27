@@ -113,7 +113,7 @@ const projectsData = [
   },
 ];
 
-// --- MOCK DE DADOS - Skills ---
+// --- MOCK DE DADOS - Hard-Skills ---
 const hardSkillsData = [
   { name: "React + TypeScript", percent: 78 },
   { name: "JavaScript & DOM", percent: 89 },
@@ -123,6 +123,7 @@ const hardSkillsData = [
   { name: "SQL", percent: 57 },
 ];
 
+// --- MOCK DE DADOS - Soft-Skills ---
 const softSkillsData = [
   { name: "Comunicação", percent: 89 },
   { name: "Trabalho em Equipe", percent: 89 },
