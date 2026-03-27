@@ -7,3 +7,8 @@
 
 // 2. Estilos Globais (Reset, body, classes utilitárias)
 @use './base/global';
+
+
+video {
+  pointer-events: none; /* Impede que o usuário consiga clicar no vídeo */
+}
