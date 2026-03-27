@@ -1,158 +1,253 @@
+/* --- Estrutura Principal --- */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5%;
+  padding: 1rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
   
-  /* Conectado ao Toggle: Fundo da Navbar acompanha o tema */
-  background-color: var(--color-bg-panel); 
-  backdrop-filter: blur(10px); 
+  /* Navbar Fixa */
+  position: sticky;
+  top: 0;
   z-index: 1000;
+  background-color: var(--color-bg-panel); 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
 
   &__left {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
   }
 
   &__logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    
-    /* Conectado ao Toggle: Texto principal */
-    color: var(--color-text-primary); 
     text-decoration: none;
-    letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: bold;
     font-family: sans-serif;
+    color: var(--color-text-primary); // Segue o toggle
+    transition: color 0.3s ease;
 
     span {
-      /* Conectado ao Toggle: Destaque roxo */
-      color: var(--color-accent-purple); 
+      color: var(--color-accent-purple);
     }
-  }
-
-  &__center {
-    display: none; 
   }
 
   &__right {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    justify-content: flex-end;
+    gap: 13px;
+    flex: 1;
   }
 }
 
+/* --- Botão Burger --- */
+.nav__burger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  z-index: 1200;
+  margin-left: 10px;
+
+  span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--color-text-primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &--open {
+    span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  }
+}
+
+/* --- Navegação Desktop --- */
 .nav {
-  position: relative;
-  display: flex;
-  align-items: center;
+  position: relative; 
 
   &__list {
     display: flex;
-    gap: 2rem;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: 1.5rem; 
   }
 
   &__link {
-    /* Conectado ao Toggle: Texto principal */
-    color: var(--color-text-primary);
-    opacity: 0.8; 
     text-decoration: none;
-    font-size: 1rem;
+    color: var(--color-text-primary);
     font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 0.5rem 0;
-    display: block;
     font-family: sans-serif;
+    transition: color 0.3s ease;
 
-    &:hover {
-      /* Conectado ao Toggle: Destaque roxo */
+    &:hover, &--active {
       color: var(--color-accent-purple);
-      opacity: 1;
-    }
-
-    &--active {
-      /* Fica dourado ou a cor que você definiu quando ativo */
-      color: var(--color-accent-gold); 
-      opacity: 1;
     }
   }
 
   &__indicator {
     position: absolute;
-    bottom: -5px;
-    left: 0;
+    bottom: -6px;
     height: 3px;
-    /* Conectado ao Toggle: A barrinha usa a cor de destaque do tema */
-    background-color: var(--color-accent-purple); 
+    background-color: var(--color-accent-purple);
     border-radius: 2px;
-    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    pointer-events: none;
+    transition: all 0.3s ease;
     opacity: 0;
+    pointer-events: none;
   }
 }
 
-/* --- Estilo do Seletor de Idiomas conectado ao Tema --- */
-.nav__lang-select {
+/* --- Dropdown de Idiomas (Estilo Pílula da Imagem) --- */
+.nav__lang-container {
+  position: relative;
+}
+
+.nav__lang-btn {
   background: transparent;
   color: var(--color-text-primary);
   border: 2px solid var(--color-accent-purple);
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 8px 16px;
+  border-radius: 50px; // Formato pílula
   cursor: pointer;
-  font-weight: bold;
-  outline: none;
-  font-family: sans-serif;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
 
   &:hover {
-    background-color: var(--color-accent-purple);
+    background: var(--color-accent-purple);
     color: #fff;
   }
+}
 
-  option {
-    background-color: var(--color-bg-panel);
-    color: var(--color-text-primary);
+.nav__lang-menu {
+  position: absolute;
+  top: 130%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  padding: 10px;
+  background-color: var(--color-bg-panel);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border: 1px solid rgba(var(--color-accent-purple), 0.2);
+  z-index: 1100;
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.nav__lang-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 5px 20px 5px 5px; // Espaço para a pílula
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 110px;
+
+  &:hover {
+    background: var(--color-accent-purple);
+    transform: translateX(-5px);
+    .nav__lang-text { color: #fff; }
   }
 }
 
-/* --- Responsividade --- */
-@media (max-width: 850px) {
-  .header {
-    padding: 0 20px;
+.nav__lang-flag {
+  /* 1. Tamanho e Forma */
+  width: 32px;
+  height: 32px;
+  border-radius: 50% !important; /* Força o container a ser redondo */
+  
+  /* 2. O segredo: Recortar tudo o que estiver fora do círculo */
+  overflow: hidden !important; 
+  
+  /* 3. Posicionamento e Alinhamento */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+
+  /* 4. Estilo opcional: Remova se quiser apenas o círculo "flutuando" */
+  /* background-color: white; // Se o fundo da bandeira demorar a carregar */
+  /* box-shadow: 0 2px 4px rgba(0,0,0,0.2); // Uma leve sombra fica bom */
+
+  img {
+    /* 5. Garante que a imagem preencha o container redondo */
+    width: 100% !important;
+    height: 100% !important;
     
-    &__logo {
-      font-size: 1.4rem;
-    }
-
-    &__right {
-      gap: 1rem;
-    }
-  }
-  
-  .nav__list {
-    gap: 1rem;
-  }
-  
-  .nav__link {
-    font-size: 0.9rem;
+    /* 6. Mantém a proporção da imagem e preenche o espaço */
+    object-fit: cover !important; 
+    
+    /* 7. Garante que a própria imagem também obedeça ao círculo */
+    border-radius: 50% !important; 
   }
 }
 
-@media (max-width: 600px) {
-  .header {
+.nav__lang-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 900px) {
+  .nav__burger {
+    display: flex;
+  }
+
+  .nav__list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    background-color: var(--color-bg-panel);
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
-    height: auto;
-    padding: 15px;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: -10px 0 20px rgba(0,0,0,0.2);
+    z-index: 1050;
+    
+    /* Animação Lateral */
+    transform: translateX(100%); 
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+
+    &--open {
+      transform: translateX(0);
+    }
+
+    li {
+      width: 100%;
+      text-align: center;
+    }
+
+    .nav__link {
+      display: block;
+      padding: 1.5rem;
+      font-size: 1.2rem;
+    }
   }
+
+  .nav__indicator { display: none; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

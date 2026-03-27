@@ -12,3 +12,11 @@
 video {
   pointer-events: none; /* Impede que o usuário consiga clicar no vídeo */
 }
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
