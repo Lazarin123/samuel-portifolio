@@ -1,0 +1,9 @@
+/* =========================================
+   Arquivo Principal de Estilos Globais
+   ========================================= */
+
+// 1. Variáveis (Cores, fontes, temas)
+@import './abstracts/variables';
+
+// 2. Estilos Globais (Reset, body, classes utilitárias)
+@import './base/global';

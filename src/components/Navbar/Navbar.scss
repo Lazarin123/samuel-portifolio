@@ -1,0 +1,74 @@
+.header {
+  display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;
+  background-color: var(--color-header-bg); position: fixed; width: 100%; top: 0; z-index: 100;
+  border-bottom: 1px solid var(--color-border); transition: background-color 0.5s ease;
+
+  &__left, &__right { flex: 1; display: flex; }
+  &__right { justify-content: flex-end; }
+  &__center { flex: 0; display: flex; justify-content: center; }
+
+  &__logo { 
+    font-size: 1.5rem; font-weight: 700; color: var(--color-text-primary); text-decoration: none; letter-spacing: 1px; transition: all 0.3s ease;
+    span { color: var(--color-accent-purple); transition: color 0.3s ease; }
+    &:hover { color: var(--color-accent-gold); transform: translateY(-2px); span { color: var(--color-text-primary); } }
+  }
+  &__profile-img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--color-accent-gold); overflow: hidden; }
+}
+
+.nav {
+  position: relative;
+  &__list { display: flex; gap: 2rem; list-style: none; padding-bottom: 5px; }
+  &__link {
+    color: var(--color-text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600;
+    transition: color 0.3s ease; text-transform: uppercase;
+    &:hover, &--active { color: var(--color-text-primary); }
+  }
+  &__indicator {
+    position: absolute; bottom: 0; left: 0; height: 3px; background-color: var(--color-accent-gold);
+    border-radius: 2px; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+}
+
+/* =========================================
+   Responsivo Navbar (Ajustado para Mobile)
+   ========================================= */
+@media (max-width: 850px) {
+  .header {
+    flex-direction: column;
+    padding: 0.8rem 1rem; // Padding menor
+    gap: 0.5rem; // Espaço reduzido entre a logo e os links
+    
+    // O SEGREDO: Deixa de ser presa (fixed) na tela e rola com a página
+    position: absolute; 
+    
+    // Opcional: Remove a borda no celular para um visual mais limpo com o vídeo
+    border-bottom: none; 
+    background-color: transparent; // Deixa o vídeo de fundo aparecer melhor no topo
+
+    &__left, &__center, &__right { 
+      flex: none; 
+      justify-content: center; 
+      width: 100%; 
+    }
+
+    &__logo {
+      font-size: 1.2rem; // Logo menor
+    }
+
+    &__profile-img {
+      width: 35px; // Foto menor
+      height: 35px;
+    }
+  }
+
+  .nav__list {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+  
+  .nav__link { 
+    font-size: 0.75rem; // Fonte dos links menor e mais compacta
+  }
+}

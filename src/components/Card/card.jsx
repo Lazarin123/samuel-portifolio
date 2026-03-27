@@ -1,51 +1,23 @@
-import "./card.scss";
+import React from "react";
+import "./Card.scss";
 
-export default function Card({
-  title,
-  badges,
-  details,
-  image,
-  githubLink,
-  liveDemo,
-  isExpanded,
-}) {
+export default function Card({ project, onClick }) {
   return (
-    <div className={`card ${isExpanded ? "card--expanded" : ""}`}>
-      <h3>{title}</h3>
-
-      {isExpanded && details && (
-        <div className="card-details">
-          <h4>Sobre o Projeto:</h4>
-          <p className="feito">Feito com:</p>
-          <div className="badges">
-            <span className="badge">{badges}</span>
+    <article className="card" onClick={() => onClick(project)}>
+      <div className="card__img-container">
+        {project.image ? (
+          <img src={project.image} alt={project.title} className="card__img" />
+        ) : (
+          <div className="card__img-placeholder">
+            <span>{project.title}</span>
           </div>
-          <p>{details}</p>
-          <hr />
-          <img src={image} alt={title} className="card-image" />
-        </div>
-      )}
-
-      <div className="card-links">
-        <a
-          href={githubLink}
-          target="_blank"
-          className="links"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-        {liveDemo && (
-          <a
-            href={liveDemo}
-            target="_blank"
-            className="links"
-            rel="noopener noreferrer"
-          >
-            Live Demo
-          </a>
         )}
       </div>
-    </div>
+
+      <div className="card__content">
+        <h3 className="card__title">{project.title}</h3>
+        <p className="card__tech">{project.tech}</p>
+      </div>
+    </article>
   );
 }

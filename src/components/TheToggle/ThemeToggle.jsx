@@ -1,30 +1,14 @@
-import React, { useState, useEffect } from "react";
-import "./_themetoggle.scss";
+import React from "react";
+import "./TheToggle.scss"; // Certifique-se de que o nome do arquivo SCSS está correto aqui
 
-const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    // Aplica o atributo no elemento principal do HTML
-    document.documentElement.setAttribute(
-      "data-theme",
-      isDark ? "dark" : "light",
-    );
-  }, [isDark]);
-
+export default function TheToggle({ theme, toggleTheme }) {
   return (
-    <div className="theme-switch-wrapper">
-      <label className="theme-switch">
-        <input
-          type="checkbox"
-          onChange={() => setIsDark(!isDark)}
-          checked={isDark}
-        />
-        <div className="slider round"></div>
-      </label>
-      <span>{isDark ? "🌙 Dark" : "☀️ Light"}</span>
-    </div>
+    <button
+      className="theme-toggle"
+      onClick={toggleTheme}
+      aria-label="Alternar Tema"
+    >
+      {theme === "light" ? "☀️" : "🌙"}
+    </button>
   );
-};
-
-export default ThemeToggle;
+}

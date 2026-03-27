@@ -1,28 +1,71 @@
-import React from "react";
-import "./_about.scss";
+import React, { useState } from "react";
+import "./About.scss";
 
-function About() {
+export default function About() {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   return (
     <section id="about" className="about">
-      <h2>Sobre Mim</h2>
-      <p>
-        Olá, eu sou o Samuel Lazarin! Sou um desenvolvedor apaixonado por
-        transformar lógica e café em soluções digitais eficientes. Atualmente,
-        curso Engenharia de Software e dedico meus dias a dominar o ecossistema
-        <strong> Java e JavaScript</strong>, com foco especial em criar
-        interfaces modernas e funcionais no <strong>Front-End.</strong> Minha
-        jornada na programação é movida pela curiosidade. Seja desenvolvendo um
-        simulador de ecossistema com lógica complexa ou criando landing pages de
-        alta conversão, meu objetivo é sempre o mesmo: entregar código limpo e
-        uma experiência de usuário impecável.
-      </p>
-      <p>
-        Trabalho com tecnologias como React, JavaScript, Node.js, Java, C, e
-        estou sempre em busca de aprender coisas novas. Tenho foco em boas
-        práticas de código e performance.
-      </p>
+      <div className="about__middle">
+        <div className="flip-wrapper" onClick={() => setIsFlipped(!isFlipped)}>
+          <div className="card-flip-container">
+            <div className={`card-flip-inner ${isFlipped ? "is-flipped" : ""}`}>
+              <div className="front">
+                <div className="img-placeholder">
+                  <img src="Image/perfil.png" alt="Foto Samuel Lazarin" />
+                </div>
+              </div>
+              <div className="back">
+                <p className="magic-phrase">
+                  "Bons programadores escrevem códigos que os humanos entendam"
+                </p>
+                <span className="magic-author">- Martin Fowler</span>
+              </div>
+            </div>
+          </div>
+          <p className="magic-prompt">
+            {isFlipped
+              ? "Clique para voltar ↑"
+              : "Clique na foto para ver a mágica ↑"}
+          </p>
+        </div>
+
+        <div className="about__bio">
+          <h2 className="about__bio-title">Quem é o Samuel?</h2>
+          <p className="about__text">
+            Sou um desenvolvedor movido pela criação de interfaces limpas e
+            experiências digitais intuitivas. Graduando em Engenharia de
+            Software (2029), combino a paixão por arquitetura de software
+            moderna com uma forte base em Qualidade de Software (QA) e Suporte
+            Técnico.
+          </p>
+          <p className="about__text">
+            Além de desenvolvedor, sou fundador da <strong>Vallis Tech</strong>,
+            uma startup dedicada a criar soluções web escaláveis, onde aplico
+            minha visão de negócios e liderança técnica focada no frontend.
+          </p>
+        </div>
+      </div>
+
+      <div className="about__bottom">
+        <div className="about__card">
+          <h2 className="about__bio-title">Trajetória Profissional</h2>
+          <p className="about__text">
+            Minha jornada teve início na Qualidade de Software (QA),
+            desenvolvendo um olhar crítico para bugs e automação de testes
+            (BDD/Robot). Hoje, aplico essa mentalidade "test-first" no
+            desenvolvimento Fullstack.
+          </p>
+        </div>
+        <div className="about__card">
+          <h2 className="about__bio-title">Visão de Futuro</h2>
+          <p className="about__text">
+            Como Engenheiro de Software, meu objetivo é arquitetar aplicações
+            escaláveis e mentorar a próxima geração, sempre buscando o
+            equilíbrio entre código performático e UI/UX de classe mundial.
+          </p>
+        </div>
+      </div>
     </section>
   );
 }
-
-export default About;

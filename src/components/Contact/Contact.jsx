@@ -1,43 +1,77 @@
-import React from 'react';
-import './_contact.scss';
-// Você pode usar bibliotecas de ícones como Font Awesome ou React Icons
-// Ou importar SVGs simples para os ícones
-// import { FaLinkedin, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import React from "react";
+import "./Contact.scss";
 
-function Contact() {
-  const email = 'samuel.lazarin12@gmail.com';
-  const whatsapp = '5511946701625'; // Formato internacional
-  const linkedin = 'https://www.linkedin.com/in/samuel-lazarin/';
-  const github = 'https://github.com/Lazarin123';
-
+export default function Contact() {
   return (
-    <section id="contact" className="contact">
-      <h2>Fale Comigo</h2>
-      <p>Estou sempre aberto a novas oportunidades e colaborações. Entre em contato comigo, vamos desenvolver juntos!</p>
-      <div className="contact__links">
-        <a href={linkedin} target="_blank" rel="noopener noreferrer" className="contact__icon-link">
-          {/* <FaLinkedin /> */}
-          <span className="icon-placeholder">In</span>
-          <span>LinkedIn</span>
+    <section id="contact">
+      <h2 className="section-title">
+        Vamos <span>Conversar</span>
+      </h2>
+      <div className="contact-grid">
+        <a
+          href="https://linkedin.com/in/samuel-lazarin/"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-card"
+        >
+          <div className="contact-card__img-container">
+            <img
+              src="Image/Contacts/linkedin.png"
+              alt="LinkedIn"
+              className="contact-card__img"
+            />
+          </div>
+          <h3 className="contact-card__title">LinkedIn</h3>
         </a>
-        <a href={`mailto:${email}`} className="contact__icon-link">
-          {/* <FaEnvelope /> */}
-          <span className="icon-placeholder">@</span>
-          <span>Email</span>
+
+        <a
+          href="https://github.com/Lazarin123"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-card"
+        >
+          <div className="contact-card__img-container">
+            <img
+              src="Image/Contacts/GitHub.png"
+              alt="GitHub"
+              className="contact-card__img"
+            />
+          </div>
+          <h3 className="contact-card__title">GitHub</h3>
         </a>
-        <a href={github} target="_blank" rel="noopener noreferrer" className="contact__icon-link">
-          {/* <FaEnvelope /> */}
-          <span className="icon-placeholder">Gh</span>
-          <span>GitHub</span>
+
+        <a
+          href="https://instagram.com/sam_lazarin"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-card"
+        >
+          <div className="contact-card__img-container">
+            <img
+              src="Image/Contacts/instagram.png"
+              alt="Instagram"
+              className="contact-card__img"
+            />
+          </div>
+          <h3 className="contact-card__title">Instagram</h3>
         </a>
-        <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" className="contact__icon-link">
-          {/* <FaWhatsapp /> */}
-          <span className="icon-placeholder">Wa</span>
-          <span>WhatsApp</span>
+
+        <a
+          href="https://wa.me/11946701625"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-card"
+        >
+          <div className="contact-card__img-container">
+            <img
+              src="Image/Contacts/WhatsApp.png"
+              alt="WhatsApp"
+              className="contact-card__img"
+            />
+          </div>
+          <h3 className="contact-card__title">WhatsApp</h3>
         </a>
       </div>
     </section>
   );
 }
-
-export default Contact;

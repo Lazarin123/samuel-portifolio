@@ -1,22 +1,22 @@
+:root {
+  --color-bg-panel: #14213d;      
+  --color-accent-gold: #fca311;   
+  --color-accent-purple: #7f31c3; 
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a8b2c1;
+  --color-header-bg: rgba(10, 17, 40, 0.95);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --background-gradient: linear-gradient(135deg, #0a1128 0%, #14213d 25%, #7b2cbf 50%, #fca311 75%, #0a1128 100%);
+  --font-main: 'Inter', system-ui, sans-serif;
+}
 
-// Definição de tamanhos
-$mobile: 480px;
-$mobile-small: 320px;
-$tablet: 768px;
-$notebook: 1024px;
-
-// Cores
-$color-background-dark: #101318;
-$color-primary-purple: #8B5CF6;
-$color-primary-purple--2: #bf48ff;
-$color-secondary-lilac: #a855f7;
-$color-text-light: #FFFFFF;
-$color-text-purpleLight: #FFFFFF;
-$color-text-muted: #475569; 
-$color-text-read-more: #5e8cd0;
-// Fontes
-$font-family-primary: 'Poppins', sans-serif;
-
-// Tamanhos de tela
-$breakpoint-mobile: 768px;
-$breakpoint-tablet: 1024px;
+[data-theme="light"] {
+  --color-bg-panel: #ffffff;      
+  --color-accent-gold: #e5940f; 
+  --color-accent-purple: #9357c8; 
+  --color-text-primary: #dad6ec;
+  --color-text-secondary: #aeaeae;
+  --color-header-bg: rgba(240, 244, 248, 0.95);
+  --color-border: rgba(0, 0, 0, 0.1);
+  --background-gradient: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 25%, #e9d8fd 50%, #feebc8 75%, #f0f4f8 100%);
+}
