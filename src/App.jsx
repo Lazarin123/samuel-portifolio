@@ -8,15 +8,15 @@ import bgVideoDark from "./assets/loopFundoDark.mp4";
 import bgVideoLight from "./assets/loopFundoClaro.mp4";
 
 // --- MOCK DE DADOS ---
-import Navbar from "./components/navbar/Navbar";
-import Home from "./components/home/Home";
-import About from "./components/about/About";
-import Skills from "./components/skills/Skills";
-import Projects from "./components/projects/Projects";
-import Contact from "./components/contact/Contact";
-import Footer from "./components/footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import Skills from "./components/Skills/Skills";
+import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 import Modal from "./components/modal/Modal";
-import ThemeToggle from "./components/theToggle/ThemeToggle";
+import ThemeToggle from "./components/TheToggle/ThemeToggle";
 
 // --- MOCK DE DADOS ---
 
