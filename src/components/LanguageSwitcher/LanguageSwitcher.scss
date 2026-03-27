@@ -1,0 +1,15 @@
+.language-switcher {
+  position: fixed; // Fica flutuando no canto da tela
+  bottom: 20px; // A 20px do fundo
+  right: 20px; // A 20px da direita
+  z-index: 1000; // Garante que fique acima de tudo
+  background-color: var(--color-background, #1d1d1d); // Use sua variável de fundo
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: var(--color-text, #fff); // Use sua variável de texto
+
+  select {
+    font-family: sans-serif;
+  }
+}

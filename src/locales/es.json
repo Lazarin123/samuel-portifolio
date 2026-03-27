@@ -1,0 +1,64 @@
+{
+  "navbar": {
+    "about": "Sobre Mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "role": "Desarrollador Fullstack",
+    "subtitle": "Fundador de Vallis Tech y Dev con enfoque Frontend (React, TS, Sass)",
+    "scroll_down": "Desplázate hacia abajo"
+  },
+  "about": {
+    "title": "¿Quién é o Samuel?",
+    "p1": "Soy un desarrollador impulsado por la creación de interfaces limpias y experiencias digitales intuitivas. Estudiante de Ingeniería de Software (2029), combino la pasión por la arquitectura de software moderna con una sólida base en Calidad de Software (QA) y Soporte Técnico.",
+    "p2_1": "Además de desarrollador, soy fundador de",
+    "p2_2": "una startup dedicada a crear soluciones web escalables, donde aplico mi visión de negocios y liderazgo técnico enfocado en el frontend.",
+    "p2_strong": "Vallis Tech",
+    "magic_prompt": "Haz clic en la foto para ver la magia ↑",
+    "trajectory_title": "Trayectoria Profesional",
+    "trajectory_text": "Mi viaje comenzó en la Calidad de Software (QA), desarrollando un ojo crítico para los errores y la automatización de pruebas (BDD/Robot). Hoy, aplico esta mentalidad de \"test-first\" en el desarrollo Fullstack.",
+    "future_title": "Visión de Futuro",
+    "future_text": "Como Ingeniero de Software, mi objetivo es diseñar aplicaciones escalables y guiar a la próxima generación, buscando siempre el equilibrio entre un código de alto rendimiento y una UI/UX de clase mundial.",
+    "magic_phrase": "\"Los buenos programadores escriben códigos que los humanos entienden\"",
+    "magic_author": "- Martin Fowler",
+    "click_back": "Haz clic para volver ↑"
+  },
+  "projects": {
+    "title_1": "Mis ",
+    "title_2": "Proyectos"
+  },
+  "skills": {
+    "title_1": "Mis ",
+    "title_2": "Habilidades",
+    "hard_skills": "Hard Skills",
+    "soft_skills": "Soft Skills",
+    "comunicacao": "Comunicación",
+    "trabalho_em_equipe": "Trabajo en Equipo",
+    "resolucao_de_problemas": "Resolución de Problemas",
+    "criatividade": "Creatividad",
+    "visao_de_produto": "Visión de Producto",
+    "atencao_ao_detalhes": "Atención a los Detalles"
+  },
+  "contact": {
+    "title_1": "Hablemos"
+  },
+  "footer": {
+    "logo_dev": "Dev",
+    "quote": "\"Transformando café e ideas complexas en soluciones web escalables.\"",
+    "nav_title": "Navegación",
+    "nav_about": "Sobre Mí",
+    "nav_projects": "Proyectos",
+    "nav_skills": "Habilidades",
+    "nav_contact": "Contacto",
+    "tech_title": "Tecnologias",
+    "rights": "Todos los derechos reservados."
+  },
+  "modal": {
+    "live_demo": "Live Demo",
+    "github": "GitHub",
+    "no_preview": "Sem prévia disponível",
+    "tech_focus": "Enfoque Técnico:"
+  }
+}

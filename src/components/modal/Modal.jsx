@@ -1,15 +1,16 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./Modal.scss";
 
 export default function Modal({ project, onClose }) {
-  // Se não houver projeto selecionado, não renderiza nada
+  const { t } = useTranslation();
+
   if (!project) return null;
 
   return (
     <div
       className={`modal-overlay ${project ? "active" : ""}`}
       onClick={(e) => {
-        // Fecha o modal apenas se clicar no fundo escuro
         if (e.target.classList.contains("modal-overlay")) onClose();
       }}
     >
@@ -31,7 +32,7 @@ export default function Modal({ project, onClose }) {
             />
           ) : (
             <div className="img-placeholder modal__img">
-              Sem prévia disponível
+              {t("modal.no_preview")}
             </div>
           )}
         </div>
@@ -39,10 +40,10 @@ export default function Modal({ project, onClose }) {
         <div className="modal__text-content">
           <h2 className="modal__title">{project.title}</h2>
           <p className="modal__desc">
-            {project.desc}
+            {project.desc} {/* A descrição em si vem do seu JSON de projetos */}
             <br />
             <br />
-            <strong>Foco Técnico:</strong> <span>{project.tech}</span>
+            <strong>{t("modal.tech_focus")}</strong> <span>{project.tech}</span>
           </p>
         </div>
 

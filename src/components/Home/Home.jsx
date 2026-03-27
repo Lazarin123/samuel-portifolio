@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./Home.scss";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="hero"
@@ -15,12 +18,10 @@ export default function Home() {
 
       <div className="hero__content">
         <h1 className="hero__name">Samuel Lazarin</h1>
-        <h2 className="hero__subtitle">Desenvolvedor Fullstack</h2>
+        <h2 className="hero__subtitle">{t("hero.role")}</h2>
 
         <h3 className="hero__tech-subtitle">
-          <span>
-            Founder da Vallis Tech & Dev Foco Frontend (React, TS, Sass)
-          </span>
+          <span>{t("hero.subtitle")}</span>
         </h3>
 
         <div className="hero__socials">
@@ -53,7 +54,7 @@ export default function Home() {
 
       <a href="#about" className="hero__scroll">
         <span>↓</span>
-        <p>Role a página</p>
+        <p>{t("hero.scroll_down")}</p>
       </a>
     </section>
   );

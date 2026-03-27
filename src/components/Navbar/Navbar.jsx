@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./Navbar.scss";
 
 export default function Navbar({ activeSection }) {
+  const { t, i18n } = useTranslation();
   const navContainerRef = useRef(null);
   const indicatorRef = useRef(null);
 
@@ -16,7 +18,11 @@ export default function Navbar({ activeSection }) {
     } else if (indicatorRef.current) {
       indicatorRef.current.style.opacity = "0";
     }
-  }, [activeSection]);
+  }, [activeSection, i18n.language]);
+
+  const handleLanguageChange = (event) => {
+    i18n.changeLanguage(event.target.value);
+  };
 
   return (
     <header className="header">
@@ -26,12 +32,7 @@ export default function Navbar({ activeSection }) {
         </a>
       </div>
 
-      <div className="header__center">
-        <div className="header__profile-img">
-          {/* O segredo está na classe img dentro deste container */}
-          <img src="Image/HeaderLogo.png" alt="Logo SL" />
-        </div>
-      </div>
+      <div className="header__center"></div>
 
       <div className="header__right">
         <nav className="nav" id="mainNav" ref={navContainerRef}>
@@ -41,7 +42,7 @@ export default function Navbar({ activeSection }) {
                 href="#about"
                 className={`nav__link ${activeSection === "about" ? "nav__link--active" : ""}`}
               >
-                Sobre
+                {t("navbar.about")}
               </a>
             </li>
             <li>
@@ -49,7 +50,7 @@ export default function Navbar({ activeSection }) {
                 href="#projects"
                 className={`nav__link ${activeSection === "projects" ? "nav__link--active" : ""}`}
               >
-                Projetos
+                {t("navbar.projects")}
               </a>
             </li>
             <li>
@@ -57,7 +58,7 @@ export default function Navbar({ activeSection }) {
                 href="#skills"
                 className={`nav__link ${activeSection === "skills" ? "nav__link--active" : ""}`}
               >
-                Habilidades
+                {t("navbar.skills")}
               </a>
             </li>
             <li>
@@ -65,12 +66,23 @@ export default function Navbar({ activeSection }) {
                 href="#contact"
                 className={`nav__link ${activeSection === "contact" ? "nav__link--active" : ""}`}
               >
-                Contato
+                {t("navbar.contact")}
               </a>
             </li>
           </ul>
           <span className="nav__indicator" ref={indicatorRef}></span>
         </nav>
+
+        {/* Seletor limpo, usando a classe do CSS agora */}
+        <select
+          className="nav__lang-select"
+          onChange={handleLanguageChange}
+          defaultValue={i18n.resolvedLanguage || "pt"}
+        >
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
       </div>
     </header>
   );

@@ -1,9 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./Footer.scss";
 import TheToggle from "../TheToggle/ThemeToggle";
 
 export default function Footer({ theme, toggleTheme }) {
-  // Lista de badges de tecnologias e redes sociais
+  const { t } = useTranslation();
+
   const badges = [
     { name: "JavaScript", color: "#F7DF1E", textColor: "#323330" },
     { name: "Node.js", color: "#339933", textColor: "white" },
@@ -21,36 +23,36 @@ export default function Footer({ theme, toggleTheme }) {
             LAZARIN<span>Dev</span>
           </a>
           <p className="footer__quote">
-            "Transformando café e ideias complexas em soluções web escaláveis."
+            <i>{t("footer.quote")}</i>
           </p>
         </div>
         <div className="footer__center">
-          <h4>Navegação</h4>
+          <h4>{t("footer.nav_title")}</h4>
           <ul className="footer__nav-list">
             <li>
               <a href="#about" className="footer__nav-link">
-                Sobre Mim
+                {t("navbar.about")}
               </a>
             </li>
             <li>
               <a href="#projects" className="footer__nav-link">
-                Projetos
+                {t("navbar.projects")}
               </a>
             </li>
             <li>
               <a href="#skills" className="footer__nav-link">
-                Habilidades
+                {t("navbar.skills")}
               </a>
             </li>
             <li>
               <a href="#contact" className="footer__nav-link">
-                Contato
+                {t("navbar.contact")}
               </a>
             </li>
           </ul>
         </div>
         <div className="footer__right">
-          <h4>Tecnologias</h4>
+          <h4>{t("footer.tech_title")}</h4>
           <div className="footer__badges">
             {badges.map((badge, index) => (
               <span
@@ -73,7 +75,7 @@ export default function Footer({ theme, toggleTheme }) {
           fontSize: "0.9rem",
         }}
       >
-        &copy; 2026 Samuel Lazarin. Todos os direitos reservados.
+        &copy; 2026 Samuel Lazarin. {t("footer.rights")}
       </div>
       <TheToggle theme={theme} toggleTheme={toggleTheme} />
     </footer>

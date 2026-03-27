@@ -1,13 +1,17 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./Contact.scss";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <section id="contact">
       <h2 className="section-title">
-        Vamos <span>Conversar</span>
+        {t("contact.title_1")} <span>{t("contact.title_2")}</span>
       </h2>
       <div className="contact-grid">
+        {/* Seus links de contato continuam exatamente iguais */}
         <a
           href="https://linkedin.com/in/samuel-lazarin/"
           target="_blank"

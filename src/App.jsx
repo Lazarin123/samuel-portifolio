@@ -26,7 +26,7 @@ const projectsData = [
     id: 1,
     title: "Valoriza App",
     tech: "React • JavaScript • Sass • NodeJS • NSQL",
-    desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema.",
+    desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema. Link demo e Git não funcionam pois não está no ar!",
     demo: "#",
     git: "#",
     image: "Image/Valoriza/Valoriza-1.png",
@@ -96,7 +96,7 @@ const projectsData = [
     id: 8,
     title: "Jogo 2048",
     tech: "JavaScript • HMTL • CSS/BEM",
-    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação, Projeto do jogo 2048 na qual conta com um jogo de quem faz mais pontos e muito bom para a evolução da lógica!",
+    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação, Projeto do jogo 2048 na qual conta com um jogo de quem faz mais pontos e muito bom para a evolução da lógica! Funciona apenas em Desktop (Computadores)",
     demo: "https://lazarin123.github.io/js_2048_game/",
     git: "https://github.com/Lazarin123/Projeto-Jogo-2048",
     image: "Image/2048/2048-1.png",
@@ -126,12 +126,12 @@ const hardSkillsData = [
 
 // --- MOCK DE DADOS - Soft-Skills ---
 const softSkillsData = [
-  { name: "Comunicação", percent: 89 },
-  { name: "Trabalho em Equipe", percent: 89 },
-  { name: "Resolução de Problemas", percent: 87 },
-  { name: "Criatividade", percent: 76 },
-  { name: "Visão de Produto", percent: 75 },
-  { name: "Atenção ao Detalhes", percent: 70 },
+  { name: "skills.comunicacao", percent: 89 },
+  { name: "skills.trabalho_em_equipe", percent: 89 },
+  { name: "skills.resolucao_de_problemas", percent: 87 },
+  { name: "skills.criatividade", percent: 76 },
+  { name: "skills.visao_de_produto", percent: 75 },
+  { name: "skills.atencao_ao_detalhes", percent: 70 },
 ];
 
 export default function App() {

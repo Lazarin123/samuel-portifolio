@@ -1,0 +1,65 @@
+{
+  "navbar": {
+    "about": "About Me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role": "Fullstack Developer",
+    "subtitle": "Founder of Vallis Tech & Frontend Focused Dev (React, TS, Sass)",
+    "scroll_down": "Scroll down"
+  },
+  "about": {
+    "title": "Who is Samuel?",
+    "p1": "I am a developer driven by creating clean interfaces and intuitive digital experiences. An undergraduate in Software Engineering (2029), I combine a passion for modern software architecture with a strong foundation in Software Quality (QA) and Technical Support.",
+    "p2_1": "Besides being a developer, I am the founder of",
+    "p2_2": "a startup dedicated to creating scalable web solutions, where I apply my business vision and technical leadership focused on the frontend.",
+    "p2_strong": "Vallis Tech",
+    "magic_prompt": "Click the photo to see the magic ↑",
+    "trajectory_title": "Professional Trajectory",
+    "trajectory_text": "My journey began in Software Quality (QA), developing a critical eye for bugs and test automation (BDD/Robot). Today, I apply this \"test-first\" mindset in Fullstack development.",
+    "future_title": "Future Vision",
+    "future_text": "As a Software Engineer, my goal is to architect scalable applications and mentor the next generation, always seeking the balance between performant code and world-class UI/UX.",
+    "magic_phrase": "\"Good programmers write code that humans can understand\"",
+    "magic_author": "- Martin Fowler",
+    "click_back": "Click to go back ↑"
+  },
+  "projects": {
+    "title_1": "My ",
+    "title_2": "Projects"
+  },
+  "skills": {
+    "title_1": "My ",
+    "title_2": "Skills",
+    "hard_skills": "Hard Skills",
+    "soft_skills": "Soft Skills",
+    "comunicacao": "Communication",
+    "trabalho_em_equipe": "Teamwork",
+    "resolucao_de_problemas": "Problem Solving",
+    "criatividade": "Creativity",
+    "visao_de_produto": "Product Vision",
+    "atencao_ao_detalhes": "Attention to Detail"
+  },
+  "contact": {
+    "title_1": "Let's ",
+    "title_2": "Talk"
+  },
+  "footer": {
+    "logo_dev": "Dev",
+    "quote": "\"Transforming coffee and complex ideas into scalable web solutions.\"",
+    "nav_title": "Navigation",
+    "nav_about": "About Me",
+    "nav_projects": "Projects",
+    "nav_skills": "Skills",
+    "nav_contact": "Contact",
+    "tech_title": "Technologies",
+    "rights": "All rights reserved."
+  },
+  "modal": {
+    "live_demo": "Live Demo",
+    "github": "GitHub",
+    "no_preview": "No preview available",
+    "tech_focus": "Technical Focus:"
+  }
+}
