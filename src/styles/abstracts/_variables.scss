@@ -11,12 +11,12 @@
 }
 
 [data-theme="light"] {
-  --color-bg-panel: #ffffff;      
+  --color-bg-panel: rgb(193, 193, 193);      
   --color-accent-gold: #e5940f; 
   --color-accent-purple: #9357c8; 
-  --color-text-primary: #dad6ec;
-  --color-text-secondary: #aeaeae;
-  --color-header-bg: rgba(240, 244, 248, 0.95);
+  --color-text-primary: #643991;
+  --color-text-secondary: #64278a;
+  --color-header-bg: rgba(193, 191, 197, 0.95);
   --color-border: rgba(0, 0, 0, 0.1);
   --background-gradient: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 25%, #e9d8fd 50%, #feebc8 75%, #f0f4f8 100%);
 }

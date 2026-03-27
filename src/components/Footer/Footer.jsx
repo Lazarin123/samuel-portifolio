@@ -18,7 +18,7 @@ export default function Footer({ theme, toggleTheme }) {
       <div className="footer__top">
         <div className="footer__left">
           <a href="#hero" className="footer__logo">
-            LAZARIN<span>123</span>
+            LAZARIN<span>Dev</span>
           </a>
           <p className="footer__quote">
             "Transformando café e ideias complexas em soluções web escaláveis."

@@ -4,9 +4,10 @@ import React, { useState, useEffect } from "react";
 import "./styles/App.scss";
 
 // Vídeo de fundo
-import bgVideo from "./assets/loopFundo.mp4";
+import bgVideoDark from "./assets/loopFundoDark.mp4";
+import bgVideoLight from "./assets/loopFundoClaro.mp4";
 
-// Componentes
+// --- MOCK DE DADOS ---
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
@@ -170,8 +171,19 @@ export default function App() {
   return (
     <>
       <div className="global-bg">
-        <video autoPlay loop muted playsInline className="global-bg__video">
-          <source src={bgVideo} type="video/mp4" />
+        <video
+          key={theme} // O 'key' força o React a recarregar o elemento de vídeo ao trocar o tema
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="global-bg__video"
+        >
+          {/* Se theme for light, usa bgVideoLight. Caso contrário, bgVideoDark */}
+          <source
+            src={theme === "light" ? bgVideoLight : bgVideoDark}
+            type="video/mp4"
+          />
         </video>
         <div className="global-bg__overlay"></div>
       </div>

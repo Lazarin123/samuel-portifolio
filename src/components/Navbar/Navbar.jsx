@@ -25,13 +25,14 @@ export default function Navbar({ activeSection }) {
           Samuel<span>Lazarin</span>
         </a>
       </div>
+
       <div className="header__center">
         <div className="header__profile-img">
-          <div className="img-placeholder">
-            <img src="favicon.png" alt="Perfil" />
-          </div>
+          {/* O segredo está na classe img dentro deste container */}
+          <img src="Image/HeaderLogo.png" alt="Logo SL" />
         </div>
       </div>
+
       <div className="header__right">
         <nav className="nav" id="mainNav" ref={navContainerRef}>
           <ul className="nav__list">
@@ -51,7 +52,6 @@ export default function Navbar({ activeSection }) {
                 Projetos
               </a>
             </li>
-            {/* Link para Habilidades adicionado */}
             <li>
               <a
                 href="#skills"
