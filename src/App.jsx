@@ -15,7 +15,7 @@ import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import Modal from "./components/ModalTemp/Modal";
+import Modal from "./components/modal/Modal";
 import ThemeToggle from "./components/TheToggle/ThemeToggle";
 
 // --- MOCK DE DADOS ---
