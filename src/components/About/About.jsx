@@ -24,7 +24,7 @@ export default function About() {
             </div>
           </div>
           <p className="magic-prompt">
-            {isFlipped ? t("about.click_back") : t("about.image_caption")}
+            {isFlipped ? t("about.click_back") : t("Clique para ver a Mágica")}
           </p>
         </div>
 
