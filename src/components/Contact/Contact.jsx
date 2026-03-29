@@ -20,7 +20,7 @@ export default function Contact() {
         >
           <div className="contact-card__img-container">
             <img
-              src="Image/Contacts/linkedin.png"
+              src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
               alt="LinkedIn"
               className="contact-card__img"
             />
@@ -36,7 +36,7 @@ export default function Contact() {
         >
           <div className="contact-card__img-container">
             <img
-              src="Image/Contacts/GitHub.png"
+              src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
               alt="GitHub"
               className="contact-card__img"
             />
@@ -52,7 +52,7 @@ export default function Contact() {
         >
           <div className="contact-card__img-container">
             <img
-              src="Image/Contacts/instagram.png"
+              src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
               alt="Instagram"
               className="contact-card__img"
             />
@@ -61,14 +61,14 @@ export default function Contact() {
         </a>
 
         <a
-          href="https://wa.me/11946701625"
+          href="https://wa.me/5511946701625?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20seus%20serviços."
           target="_blank"
           rel="noreferrer"
           className="contact-card"
         >
           <div className="contact-card__img-container">
             <img
-              src="Image/Contacts/WhatsApp.png"
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
               alt="WhatsApp"
               className="contact-card__img"
             />
