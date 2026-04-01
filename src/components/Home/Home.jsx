@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./Home.scss";
+import VideoHome from "../../assets/VideoHero.mp4";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -15,7 +16,7 @@ export default function Home() {
         playsInline
         className="hero__video"
       >
-        <source src="../../assets/VideoHero.mp4" type="video/mp4" />
+        <source src={VideoHome} type="video/mp4" />
         Seu navegador não suporta vídeos.
       </video>
 
