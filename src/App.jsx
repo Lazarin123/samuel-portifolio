@@ -176,11 +176,11 @@ export default function App() {
     <>
       <AnimatePresence mode="wait">
         {!isIntroFinished ? (
-          /* --- FASE 1: ANIMAÇÃO DE ENTRADA --- */
+          /* --- FASE 1: ANIMAÇÃO DE ENTRADA (VÍDEO) --- */
           <motion.div
             key="intro"
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1 }} // Saída suave do vídeo
           >
             <IntroAnima onFinished={() => setIsIntroFinished(true)} />
           </motion.div>
@@ -190,17 +190,18 @@ export default function App() {
             key="content"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.2 }} // Entrada suave do portfólio
           >
             <div className="global-bg">
               <video
-                key={theme}
+                key={theme} // O 'key' força o React a recarregar o elemento de vídeo ao trocar o tema
                 autoPlay
                 loop
                 muted
                 playsInline
                 className="global-bg__video"
               >
+                {/* Se theme for light, usa bgVideoLight. Caso contrário, bgVideoDark */}
                 <source
                   src={theme === "light" ? bgVideoLight : bgVideoDark}
                   type="video/mp4"
