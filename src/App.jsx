@@ -240,8 +240,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // Estilos Globais
 import "./styles/App.scss";
 
-// Vídeos de fundo
-import bgVideoDark from "./assets/loopFundoDark.mp4";
+// Vídeos de fundo (Usaremos apenas o Light no fundo após a intro)
 import bgVideoLight from "./assets/loopFundoClaro.mp4";
 
 // Componentes
@@ -256,13 +255,13 @@ import Footer from "./components/Footer/Footer";
 import Modal from "./components/modal/Modal";
 import ThemeToggle from "./components/TheToggle/ThemeToggle";
 
-// --- MOCK DE DADOS ---
+// --- MOCK DE DADOS - Projects ---
 const projectsData = [
   {
     id: 1,
     title: "Valoriza App",
     tech: "React • JavaScript • Sass • NodeJS • NSQL",
-    desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema. Link demo e Git não funcionam pois não está no ar!",
+    desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema.",
     demo: "#",
     git: "#",
     image: "Image/Valoriza/Valoriza-1.png",
@@ -272,7 +271,7 @@ const projectsData = [
     id: 2,
     title: "FlowState",
     tech: "JavaScript • HTML • BEM",
-    desc: "Aplicação Pomodoro de produtividade. Desenvolvida para ajudar a todos a melhorarem seu jeito de estudar e evoluirem cada vez mais, projeto desenvolvido para praticar a lógica de programação na qual já tem ajudado mais de 30 pessoas!",
+    desc: "Aplicação Pomodoro de produtividade. Desenvolvida para ajudar a todos a melhorarem seu jeito de estudar e evoluirem cada vez mais.",
     demo: "https://lazarin123.github.io/Projeto-FlowState/",
     git: "https://github.com/Lazarin123/Projeto-FlowState",
     image: "Image/flowState/FlowState2.png",
@@ -282,7 +281,7 @@ const projectsData = [
     id: 3,
     title: "Caixa Eletrônico - C",
     tech: "C",
-    desc: "Projeto desenvolvido na Linguagem C de simulador de caixa eletrônico, na qual foi aplicado a lógica e estruturas para o sistema, um projeto na qual evolui e aprimorei meus conhecimentos em Lógica de Programação e Linguagem C",
+    desc: "Projeto desenvolvido na Linguagem C de simulador de caixa eletrônico, aplicando lógica e estruturas complexas.",
     demo: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
     git: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
     image: "Image/caixa/Simulador-Caixa.png",
@@ -292,7 +291,7 @@ const projectsData = [
     id: 4,
     title: "Carnivoros e Herbivoros",
     tech: "JavaScript • Lógica de Programação",
-    desc: "Projeto voltado para o desenvolvimento BackEnd, de um jogo de Carnivoros e Herbivoros na qual foi aplicado a lógica de programação para o desenvolvimento do projeto!",
+    desc: "Projeto voltado para o desenvolvimento BackEnd, simulando um ecossistema com lógica de programação pura.",
     demo: "https://github.com/Lazarin123/js_herbivores_and_carnivores",
     git: "https://github.com/Lazarin123/js_herbivores_and_carnivores",
     image: "Image/CH/Carnivoros e Herbivoros.png",
@@ -302,7 +301,7 @@ const projectsData = [
     id: 5,
     title: "My Bike - Landing Page",
     tech: "JavaScript • HMTL • CSS/BEM",
-    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, e praticar a lógica de programação no desenvolvimento FrontEnd Vanilla, Projeto de LandingPage para a empresa MyBike na qual evolui muito com esse desenvolvimento!",
+    desc: "Landing Page focada em design responsivo e arquitetura de estilos moderna.",
     demo: "https://lazarin123.github.io/layout_landing-page/",
     git: "https://github.com/Lazarin123/Landing-Page",
     image: "Image/MyBike/MyBike.png",
@@ -312,7 +311,7 @@ const projectsData = [
     id: 6,
     title: "PokeDex",
     tech: "JavaScript • HMTL • CSS/BEM • API",
-    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Integração de APIS e praticar a lógica de programação no desenvolvimento FrontEnd Vanilla, Projeto de PokeDex na qual evolui muito com esse desenvolvimento!",
+    desc: "Integração de APIs e manipulação dinâmica de dados em FrontEnd Vanilla.",
     demo: "https://lazarin123.github.io/PokeDex-JS/",
     git: "https://github.com/Lazarin123/PokeDex-JS",
     image: "Image/pokedex/PokeDex2.png",
@@ -322,7 +321,7 @@ const projectsData = [
     id: 7,
     title: "Conversor de Moedas",
     tech: "JavaScript • HMTL • CSS/BEM • API",
-    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Integração de APIS e praticar a lógica de programação, Projeto de Conversor de Moedas na qual conta com uma taxa de atualização de 30s para melhor experiência!",
+    desc: "Aplicação com taxas de atualização em tempo real para melhor experiência do usuário.",
     demo: "https://lazarin123.github.io/Conversor-de-Moedas-JS/",
     git: "https://github.com/Lazarin123/Conversor-de-Moedas-JS",
     image: "Image/conversor/conversor2.png",
@@ -332,7 +331,7 @@ const projectsData = [
     id: 8,
     title: "Jogo 2048",
     tech: "JavaScript • HMTL • CSS/BEM",
-    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação, Projeto do jogo 2048 na qual conta com um jogo de quem faz mais pontos e muito bom para a evolução da lógica! Funciona apenas em Desktop (Computadores)",
+    desc: "Clássico jogo 2048 desenvolvido para praticar lógica matricial e animações CSS.",
     demo: "https://lazarin123.github.io/js_2048_game/",
     git: "https://github.com/Lazarin123/Projeto-Jogo-2048",
     image: "Image/2048/2048-1.png",
@@ -342,7 +341,7 @@ const projectsData = [
     id: 9,
     title: "Buscador de CEP",
     tech: "JavaScript • HMTL • CSS/BEM • API",
-    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação e APIs, Projeto do Buscador de CEP na qual conta com um projeto de buscador de cep aonde pratiquei minha lógica de programação e integração de APIs!",
+    desc: "Utilitário de busca de endereços através da integração com ViaCEP API.",
     demo: "https://lazarin123.github.io/Project-Api/",
     git: "https://github.com/Lazarin123/Project-Api",
     image: "Image/cep/buscador.png",
@@ -369,23 +368,16 @@ const softSkillsData = [
 ];
 
 export default function App() {
-  const [theme, setTheme] = useState(
-    () => localStorage.getItem("theme") || "dark",
-  );
+  // Definimos o tema como "light" por padrão para atender seu pedido
+  const [theme, setTheme] = useState("light");
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    if (theme === "light") {
-      document.documentElement.setAttribute("data-theme", "light");
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-    }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () =>
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    // Forçamos o modo claro (Light)
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -403,27 +395,24 @@ export default function App() {
   }, []);
 
   return (
-    <div className="app-main-wrapper" style={{ backgroundColor: "#050505" }}>
-      {/* 1. INTRO ANIMA - Coexiste com o site via Scroll */}
+    <div className="app-main-wrapper" style={{ backgroundColor: "#FFFFFF" }}>
+      {/* 1. INTRO ANIMA - Fundo Escuro Inicial */}
       <IntroAnima />
 
-      {/* 2. CONTEÚDO DO SITE - Revelado pelo scroll */}
+      {/* 2. PORTFÓLIO - Revelado em Branco Puro */}
       <div className="portfolio-layer" style={{ position: "relative", zIndex: 10, marginTop: "-100vh" }}>
-        <div className="global-bg">
+        <div className="global-bg" style={{ backgroundColor: "#FFFFFF" }}>
           <video
-            key={theme}
             autoPlay
             loop
             muted
             playsInline
             className="global-bg__video"
           >
-            <source
-              src={theme === "light" ? bgVideoLight : bgVideoDark}
-              type="video/mp4"
-            />
+            <source src={bgVideoLight} type="video/mp4" />
           </video>
-          <div className="global-bg__overlay"></div>
+          {/* Overlay claro para garantir leitura */}
+          <div className="global-bg__overlay" style={{ background: "rgba(255, 255, 255, 0.4)" }}></div>
         </div>
 
         <Navbar activeSection={activeSection} />
@@ -436,13 +425,14 @@ export default function App() {
           <Contact />
         </main>
 
-        <Footer theme={theme} toggleTheme={toggleTheme} />
+        <Footer theme="light" toggleTheme={() => {}} />
 
         <Modal
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
         />
-        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+        {/* Toggle escondido ou desativado se quiser manter apenas o modo claro */}
+        <ThemeToggle theme="light" toggleTheme={() => {}} />
       </div>
     </div>
   );
