@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// Importação robusta para evitar erro de exportação na Vercel
-import { ArrowRight, Github as GithubIcon, Linkedin as LinkedinIcon } from 'lucide-react';
-// E use <GithubIcon /> e <LinkedinIcon /> no lugar das tags anteriores.
+import { FaGithub, FaLinkedin, FaArrowRight } from 'react-icons/fa'; // Mudança aqui
 
 const HeroSection = () => {
   const containerVariants = {
@@ -56,7 +54,7 @@ const HeroSection = () => {
           variants={itemVariants}
           className="text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto"
         >
-          Especialista em React, TypeScript e automação. Criador da Vallis Tech e focado em experiências digitais de alto nível.
+          Especialista em React e automação. Criador da Vallis Tech e focado em experiências digitais de alto nível.
         </motion.p>
 
         <motion.div
@@ -68,7 +66,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 transition-all hover:scale-105"
           >
             Ver Projetos
-            <ArrowRight size={20} />
+            <FaArrowRight />
           </a>
 
           <div className="flex gap-3">
@@ -79,16 +77,16 @@ const HeroSection = () => {
               whileHover={{ scale: 1.1, y: -2 }}
               className="p-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
             >
-              <Github size={24} />
+              <FaGithub size={24} />
             </motion.a>
             <motion.a
-              href="#" // Adicione seu LinkedIn aqui
+              href="https://linkedin.com/in/seu-perfil" 
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, y: -2 }}
               className="p-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
             >
-              <Linkedin size={24} />
+              <FaLinkedin size={24} />
             </motion.a>
           </div>
         </motion.div>
