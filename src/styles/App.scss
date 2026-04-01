@@ -1,27 +1,3 @@
-// /* =========================================
-//    Arquivo Principal de Estilos Globais
-//    ========================================= */
-
-// // 1. Variáveis (Cores, fontes, temas)
-// @use './abstracts/variables';
-
-// // 2. Estilos Globais (Reset, body, classes utilitárias)
-// @use './base/global';
-
-
-// video {
-//   pointer-events: none; /* Impede que o usuário consiga clicar no vídeo */
-// }
-
-// html, body {
-//   overflow-x: hidden;
-//   width: 100%;
-//   position: relative;
-//   margin: 0;
-//   padding: 0;
-//   scroll-behavior: smooth;
-// }
-
 /* =========================================
    Arquivo Principal de Estilos Globais
    ========================================= */
@@ -43,22 +19,14 @@ html, body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  // Fundo dinâmico para respeitar seu tema e não ficar preto
-  background-color: var(--color-bg-primary); 
+  // Fundo dinâmico para respeitar a variável do seu tema original
+  background-color: var(--color-bg-primary, #050505); 
 }
 
 /* Container Principal */
 .app-main-wrapper {
   position: relative;
   width: 100%;
-}
-
-/* Camada do Portfólio que aparece depois do Scroll da Intro */
-.portfolio-layer {
-  pointer-events: auto;
-  background-color: transparent; 
-  /* Todo o conteúdo fluirá naturalmente abaixo da Intro, 
-     garantindo que NADA fique escondido ou escurecido */
 }
 
 /* Garante que o vídeo de fundo global fique no nível correto */
