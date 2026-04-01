@@ -43,8 +43,8 @@ html, body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  // Fundo dinâmico para evitar aquele "piscar" feio quando transiciona:
-  background-color: var(--color-bg-primary); 
+  // O fundo do body vai respeitar a variável de cor baseada no tema
+  background-color: var(--color-bg-primary, #050505); 
 }
 
 /* Camadas de Transição do Portfólio */
@@ -56,11 +56,11 @@ html, body {
 .portfolio-layer {
   // Garante que o conteúdo seja interativo
   pointer-events: auto;
-  // Fundo transparente para deixar seu global-bg (vídeos) aparecer
+  // Fundo transparente para o seu global-bg e seus componentes aparecerem normalmente
   background-color: transparent; 
 }
 
-/* Garante que o vídeo de fundo global não fique por cima da IntroAnima */
+/* Garante que o vídeo de fundo global fique no nível correto */
 .global-bg {
   z-index: 0;
 }

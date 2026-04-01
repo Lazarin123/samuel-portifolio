@@ -439,7 +439,7 @@
 // }
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Estilos Globais
 import "./styles/App.scss";
@@ -554,6 +554,7 @@ const projectsData = [
   },
 ];
 
+// --- MOCK DE DADOS - Hard-Skills ---
 const hardSkillsData = [
   { name: "React + TypeScript", percent: 78 },
   { name: "JavaScript & DOM", percent: 89 },
@@ -563,6 +564,7 @@ const hardSkillsData = [
   { name: "SQL", percent: 57 },
 ];
 
+// --- MOCK DE DADOS - Soft-Skills ---
 const softSkillsData = [
   { name: "skills.comunicacao", percent: 89 },
   { name: "skills.trabalho_em_equipe", percent: 89 },
@@ -573,21 +575,19 @@ const softSkillsData = [
 ];
 
 export default function App() {
-  // O Estado de Tema restaurado para a sua lógica original
+  // Retornando a lógica original: Dark Mode por padrão!
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "dark"
   );
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeSection, setActiveSection] = useState("");
 
-  // O Hook de Scroll para o "Escurecimento do Footer"
-  const { scrollYProgress } = useScroll();
-  // Começa a escurecer aos 80% do site e atinge 65% de preto no final (100%).
-  const footerDarkness = useTransform(scrollYProgress, [0.8, 1], [0, 0.65]);
-
-  // Aplica a troca real do Data-Theme no HTML
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
+    if (theme === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
     localStorage.setItem("theme", theme);
   }, [theme]);
 
@@ -612,17 +612,10 @@ export default function App() {
   return (
     <div className="app-main-wrapper">
       
-      {/* OVERLAY DO FOOTER: Fica sobre o site, mas não cobre Navbar (z-index médio). */}
-      {/* Escurece apenas quando rola até o final, nunca ficando 100% preto. */}
-      <motion.div 
-        className="fixed inset-0 pointer-events-none bg-black z-[45]" 
-        style={{ opacity: footerDarkness }} 
-      />
-
-      {/* 1. INTRO ANIMA - Coexiste com o site via Scroll */}
+      {/* 1. INTRO ANIMA - Animação de entrada interativa */}
       <IntroAnima />
 
-      {/* 2. CONTEÚDO DO SITE - Revelado pelo scroll */}
+      {/* 2. CONTEÚDO DO SITE - 100% visível e claro após o scroll */}
       <div className="portfolio-layer" style={{ position: "relative", zIndex: 10, marginTop: "-100vh" }}>
         
         <div className="global-bg">
