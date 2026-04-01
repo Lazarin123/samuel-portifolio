@@ -17,6 +17,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Modal from "./components/modal/Modal";
 import ThemeToggle from "./components/TheToggle/ThemeToggle";
+import HeroSection from "./components/HeroSection/HeroSection";
 
 // --- MOCK DE DADOS ---
 
@@ -191,6 +192,7 @@ export default function App() {
       <Navbar activeSection={activeSection} />
 
       <main className="main-content-wrapper">
+        <HeroSection />
         <Home />
         <About />
         <Projects data={projectsData} onProjectClick={setSelectedProject} />
