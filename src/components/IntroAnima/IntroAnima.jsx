@@ -4,15 +4,21 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const IntroAnima = () => {
   const { scrollYProgress } = useScroll();
 
-  // Transformações baseadas no scroll (0 a 1)
-  const scale = useTransform(scrollYProgress, [0, 0.4], [1, 0.4]);
-  const opacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
-  const yText = useTransform(scrollYProgress, [0, 0.4], [0, -150]);
-  const bgOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  // 1. Efeito de "Ir para o fundo" (Escala diminui) e sumir
+  const scale = useTransform(scrollYProgress, [0, 0.35], [1, 0.1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  
+  // 2. Separação e Rotação das palavras (HELLO vai pra esquerda, DEV vai pra direita)
+  const xLeft = useTransform(scrollYProgress, [0, 0.3], [0, -20vw]);
+  const xRight = useTransform(scrollYProgress, [0, 0.3], [0, 20vw]);
+  const rotateLeft = useTransform(scrollYProgress, [0, 0.3], [0, -25]); // Gira -25 graus
+  const rotateRight = useTransform(scrollYProgress, [0, 0.3], [0, 25]); // Gira 25 graus
+
+  // Fundo preto dissolve
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   return (
-    <div className="intro-container" style={{ position: 'relative', width: '100%' }}>
-      {/* Camada de fundo fixa que bloqueia o site no início */}
+    <>
       <motion.div 
         style={{ 
           opacity: bgOpacity,
@@ -24,29 +30,61 @@ const IntroAnima = () => {
         }}
       />
       
-      <div className="intro-scroll-setter" style={{ height: '200vh' }}>
-        <div className="intro-sticky-wrapper" style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', zIndex: 110 }}>
-          <motion.div 
-            style={{ scale, opacity, y: yText, textAlign: 'center', pointerEvents: 'none' }}
-          >
-            <h1 className="intro-title" style={{ fontSize: '16vw', fontWeight: 900, lineHeight: 0.8, margin: 0, color: '#fff', textTransform: 'uppercase', letterSpacing: '-0.05em' }}>
-              HELLO
-            </h1>
-            <h1 className="intro-title" style={{ fontSize: '16vw', fontWeight: 900, lineHeight: 0.8, margin: 0, color: '#6d28d9', textTransform: 'uppercase', letterSpacing: '-0.05em' }}>
-              DEV!
-            </h1>
+      <div style={{ height: '180vh', position: 'relative', width: '100%' }}>
+        <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', zIndex: 110 }}>
+          
+          {/* Container que vai "pro fundo" (escala reduzida) */}
+          <motion.div style={{ scale, opacity, display: 'flex', gap: '4vw', alignItems: 'center', justifyContent: 'center' }}>
             
-            <motion.div 
-              animate={{ y: [0, 10, 0], opacity: [0.3, 0.6, 0.3] }}
-              transition={{ repeat: Infinity, duration: 2.5 }}
-              style={{ marginTop: '2rem', fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.4rem', textTransform: 'uppercase' }}
+            {/* Palavra HELLO (Vai pra esquerda e tomba de lado) */}
+            <motion.h1 
+              style={{ 
+                x: xLeft, 
+                rotateZ: rotateLeft,
+                fontSize: '15vw', 
+                fontWeight: 900, 
+                color: '#FFFFFF', 
+                margin: 0, 
+                lineHeight: 0.8 
+              }}
             >
-              Scroll to Explore
-            </motion.div>
+              HELLO
+            </motion.h1>
+
+            {/* Palavra DEV! (Vai pra direita e tomba pro outro lado) */}
+            <motion.h1 
+              style={{ 
+                x: xRight, 
+                rotateZ: rotateRight,
+                fontSize: '15vw', 
+                fontWeight: 900, 
+                color: '#6d28d9', 
+                margin: 0, 
+                lineHeight: 0.8 
+              }}
+            >
+              DEV!
+            </motion.h1>
+
           </motion.div>
+          
+          {/* Indicador de scroll */}
+          <motion.div 
+            style={{ opacity }}
+            className="absolute bottom-10"
+          >
+            <motion.p 
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.4rem', textTransform: 'uppercase', margin: 0 }}
+            >
+              Scroll
+            </motion.p>
+          </motion.div>
+
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

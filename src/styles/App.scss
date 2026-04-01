@@ -23,14 +23,17 @@
 // }
 
 /* =========================================
-   Arquivo Principal - Foco no Branco/Claro
+   Arquivo Principal de Estilos Globais
    ========================================= */
 
+// 1. Variáveis (Cores, fontes, temas)
 @use './abstracts/variables';
+
+// 2. Estilos Globais (Reset, body, classes utilitárias)
 @use './base/global';
 
 video {
-  pointer-events: none;
+  pointer-events: none; /* Impede que o usuário consiga clicar no vídeo */
 }
 
 html, body {
@@ -40,34 +43,36 @@ html, body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  // O body começa com a cor da intro, mas o conteúdo será branco
-  background-color: #050505; 
+  // Fundo dinâmico para evitar aquele "piscar" feio quando transiciona:
+  background-color: var(--color-bg-primary); 
 }
 
+/* Camadas de Transição do Portfólio */
 .app-main-wrapper {
   position: relative;
+  width: 100%;
 }
 
 .portfolio-layer {
-  background-color: #FFFFFF; // Força o fundo branco na revelação
-  color: #1a1a1a; // Texto escuro para contraste
+  // Garante que o conteúdo seja interativo
+  pointer-events: auto;
+  // Fundo transparente para deixar seu global-bg (vídeos) aparecer
+  background-color: transparent; 
 }
 
-.main-content-wrapper {
-  position: relative;
-  z-index: 5;
+/* Garante que o vídeo de fundo global não fique por cima da IntroAnima */
+.global-bg {
+  z-index: 0;
 }
 
-/* Garante que o Navbar e outros elementos se adaptem ao branco */
-[data-theme="light"] {
-  .navbar, .footer {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #1a1a1a;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+/* Responsividade para o margin-top do portfólio */
+@media (max-width: 992px) {
+  .portfolio-layer {
+    margin-top: -90vh !important;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .portfolio-layer {
     margin-top: -85vh !important;
   }

@@ -1,16 +1,251 @@
+// // import React, { useState, useEffect } from "react";
+// // import { motion, AnimatePresence } from "framer-motion"; // Importação necessária para a orquestração
+
+// // // Estilos Globais
+// // import "./styles/App.scss";
+
+// // // Vídeo de fundo
+// // import bgVideoDark from "./assets/loopFundoDark.mp4";
+// // import bgVideoLight from "./assets/loopFundoClaro.mp4";
+
+// // // Componentes
+// // import Navbar from "./components/Navbar/Navbar";
+// // import IntroAnima from "./components/IntroAnima/IntroAnima"; // Certifique-se de que o arquivo existe nesta pasta
+// // import Home from "./components/Home/Home";
+// // import About from "./components/About/About";
+// // import Skills from "./components/Skills/Skills";
+// // import Projects from "./components/Projects/Projects";
+// // import Contact from "./components/Contact/Contact";
+// // import Footer from "./components/Footer/Footer";
+// // import Modal from "./components/modal/Modal";
+// // import ThemeToggle from "./components/TheToggle/ThemeToggle";
+
+
+// // // --- MOCK DE DADOS - Projects ---
+// // const projectsData = [
+// //   {
+// //     id: 1,
+// //     title: "Valoriza App",
+// //     tech: "React • JavaScript • Sass • NodeJS • NSQL",
+// //     desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema. Link demo e Git não funcionam pois não está no ar!",
+// //     demo: "#",
+// //     git: "#",
+// //     image: "Image/Valoriza/Valoriza-1.png",
+// //     imageModal: "Image/Valoriza/Valoriza-2.png",
+// //   },
+// //   {
+// //     id: 2,
+// //     title: "FlowState",
+// //     tech: "JavaScript • HTML • BEM",
+// //     desc: "Aplicação Pomodoro de produtividade. Desenvolvida para ajudar a todos a melhorarem seu jeito de estudar e evoluirem cada vez mais, projeto desenvolvido para praticar a lógica de programação na qual já tem ajudado mais de 30 pessoas!",
+// //     demo: "https://lazarin123.github.io/Projeto-FlowState/",
+// //     git: "https://github.com/Lazarin123/Projeto-FlowState",
+// //     image: "Image/flowState/FlowState2.png",
+// //     imageModal: "Image/flowState/FlowState1.png",
+// //   },
+// //   {
+// //     id: 3,
+// //     title: "Caixa Eletrônico - C",
+// //     tech: "C",
+// //     desc: "Projeto desenvolvido na Linguagem C de simulador de caixa eletrônico, na qual foi aplicado a lógica e estruturas para o sistema, um projeto na qual evolui e aprimorei meus conhecimentos em Lógica de Programação e Linguagem C",
+// //     demo: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
+// //     git: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
+// //     image: "Image/caixa/Simulador-Caixa.png",
+// //     imageModal: "Image/caixa/Simulador-Caixa.png",
+// //   },
+// //   {
+// //     id: 4,
+// //     title: "Carnivoros e Herbivoros",
+// //     tech: "JavaScript • Lógica de Programação",
+// //     desc: "Projeto voltado para o desenvolvimento BackEnd, de um jogo de Carnivoros e Herbivoros na qual foi aplicado a lógica de programação para o desenvolvimento do projeto!",
+// //     demo: "https://github.com/Lazarin123/js_herbivores_and_carnivores",
+// //     git: "https://github.com/Lazarin123/js_herbivores_and_carnivores",
+// //     image: "Image/CH/Carnivoros e Herbivoros.png",
+// //     imageModal: "Image/CH/Carnivoros e Herbivoros.png",
+// //   },
+// //   {
+// //     id: 5,
+// //     title: "My Bike - Landing Page",
+// //     tech: "JavaScript • HMTL • CSS/BEM",
+// //     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, e praticar a lógica de programação no desenvolvimento FrontEnd Vanilla, Projeto de LandingPage para a empresa MyBike na qual evolui muito com esse desenvolvimento!",
+// //     demo: "https://lazarin123.github.io/layout_landing-page/",
+// //     git: "https://github.com/Lazarin123/Landing-Page",
+// //     image: "Image/MyBike/MyBike.png",
+// //     imageModal: "Image/MyBike/MyBike1.png",
+// //   },
+// //   {
+// //     id: 6,
+// //     title: "PokeDex",
+// //     tech: "JavaScript • HMTL • CSS/BEM • API",
+// //     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Integração de APIS e praticar a lógica de programação no desenvolvimento FrontEnd Vanilla, Projeto de PokeDex na qual evolui muito com esse desenvolvimento!",
+// //     demo: "https://lazarin123.github.io/PokeDex-JS/",
+// //     git: "https://github.com/Lazarin123/PokeDex-JS",
+// //     image: "Image/pokedex/PokeDex2.png",
+// //     imageModal: "Image/pokedex/PokeDex.1.png",
+// //   },
+// //   {
+// //     id: 7,
+// //     title: "Conversor de Moedas",
+// //     tech: "JavaScript • HMTL • CSS/BEM • API",
+// //     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Integração de APIS e praticar a lógica de programação, Projeto de Conversor de Moedas na qual conta com uma taxa de atualização de 30s para melhor experiência!",
+// //     demo: "https://lazarin123.github.io/Conversor-de-Moedas-JS/",
+// //     git: "https://github.com/Lazarin123/Conversor-de-Moedas-JS",
+// //     image: "Image/conversor/conversor2.png",
+// //     imageModal: "Image/conversor/conversor1.png",
+// //   },
+// //   {
+// //     id: 8,
+// //     title: "Jogo 2048",
+// //     tech: "JavaScript • HMTL • CSS/BEM",
+// //     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação, Projeto do jogo 2048 na qual conta com um jogo de quem faz mais pontos e muito bom para a evolução da lógica! Funciona apenas em Desktop (Computadores)",
+// //     demo: "https://lazarin123.github.io/js_2048_game/",
+// //     git: "https://github.com/Lazarin123/Projeto-Jogo-2048",
+// //     image: "Image/2048/2048-1.png",
+// //     imageModal: "Image/2048/2048-1.png",
+// //   },
+// //   {
+// //     id: 9,
+// //     title: "Buscador de CEP",
+// //     tech: "JavaScript • HMTL • CSS/BEM • API",
+// //     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação e APIs, Projeto do Buscador de CEP na qual conta com um projeto de buscador de cep aonde pratiquei minha lógica de programação e integração de APIs!",
+// //     demo: "https://lazarin123.github.io/Project-Api/",
+// //     git: "https://github.com/Lazarin123/Project-Api",
+// //     image: "Image/cep/buscador.png",
+// //     imageModal: "Image/cep/buscador.png",
+// //   },
+// // ];
+
+// // // --- MOCK DE DADOS - Hard-Skills ---
+// // const hardSkillsData = [
+// //   { name: "React + TypeScript", percent: 78 },
+// //   { name: "JavaScript & DOM", percent: 89 },
+// //   { name: "C# & .NET", percent: 67 },
+// //   { name: "Sass & BEM", percent: 95 },
+// //   { name: "Node.js", percent: 67 },
+// //   { name: "SQL", percent: 57 },
+// // ];
+
+// // // --- MOCK DE DADOS - Soft-Skills ---
+// // const softSkillsData = [
+// //   { name: "skills.comunicacao", percent: 89 },
+// //   { name: "skills.trabalho_em_equipe", percent: 89 },
+// //   { name: "skills.resolucao_de_problemas", percent: 87 },
+// //   { name: "skills.criatividade", percent: 76 },
+// //   { name: "skills.visao_de_produto", percent: 75 },
+// //   { name: "skills.atencao_ao_detalhes", percent: 70 },
+// // ];
+
+// // export default function App() {
+// //   const [theme, setTheme] = useState(
+// //     () => localStorage.getItem("theme") || "dark",
+// //   );
+// //   const [selectedProject, setSelectedProject] = useState(null);
+// //   const [activeSection, setActiveSection] = useState("");
+  
+// //   // Adicionado: Estado para controlar se a intro terminou
+// //   const [isIntroFinished, setIsIntroFinished] = useState(false);
+
+// //   useEffect(() => {
+// //     if (theme === "light") {
+// //       document.documentElement.setAttribute("data-theme", "light");
+// //     } else {
+// //       document.documentElement.removeAttribute("data-theme");
+// //     }
+// //     localStorage.setItem("theme", theme);
+// //   }, [theme]);
+
+// //   const toggleTheme = () =>
+// //     setTheme((prev) => (prev === "light" ? "dark" : "light"));
+
+// //   useEffect(() => {
+// //     const handleScroll = () => {
+// //       const sections = document.querySelectorAll("section");
+// //       let current = "";
+// //       sections.forEach((section) => {
+// //         if (window.scrollY >= section.offsetTop - 150) {
+// //           current = section.getAttribute("id");
+// //         }
+// //       });
+// //       setActiveSection(current);
+// //     };
+// //     window.addEventListener("scroll", handleScroll);
+// //     return () => window.removeEventListener("scroll", handleScroll);
+// //   }, []);
+
+// //   return (
+// //     <>
+// //       <AnimatePresence mode="wait">
+// //         {!isIntroFinished ? (
+// //           /* --- FASE 1: ANIMAÇÃO DE ENTRADA (VÍDEO) --- */
+// //           <motion.div
+// //             key="intro"
+// //             exit={{ opacity: 0 }}
+// //             transition={{ duration: 1 }} // Saída suave do vídeo
+// //           >
+// //             <IntroAnima onFinished={() => setIsIntroFinished(true)} />
+// //           </motion.div>
+// //         ) : (
+// //           /* --- FASE 2: CONTEÚDO REAL DO SITE --- */
+// //           <motion.div
+// //             key="content"
+// //             initial={{ opacity: 0 }}
+// //             animate={{ opacity: 1 }}
+// //             transition={{ duration: 1.2 }} // Entrada suave do portfólio
+// //           >
+// //             <div className="global-bg">
+// //               <video
+// //                 key={theme} // O 'key' força o React a recarregar o elemento de vídeo ao trocar o tema
+// //                 autoPlay
+// //                 loop
+// //                 muted
+// //                 playsInline
+// //                 className="global-bg__video"
+// //               >
+// //                 {/* Se theme for light, usa bgVideoLight. Caso contrário, bgVideoDark */}
+// //                 <source
+// //                   src={theme === "light" ? bgVideoLight : bgVideoDark}
+// //                   type="video/mp4"
+// //                 />
+// //               </video>
+// //               <div className="global-bg__overlay"></div>
+// //             </div>
+
+// //             <Navbar activeSection={activeSection} />
+
+// //             <main className="main-content-wrapper">
+// //               <Home />
+// //               <About />
+// //               <Projects data={projectsData} onProjectClick={setSelectedProject} />
+// //               <Skills hardSkills={hardSkillsData} softSkills={softSkillsData} />
+// //               <Contact />
+// //             </main>
+
+// //             <Footer theme={theme} toggleTheme={toggleTheme} />
+
+// //             <Modal
+// //               project={selectedProject}
+// //               onClose={() => setSelectedProject(null)}
+// //             />
+// //             <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+// //           </motion.div>
+// //         )}
+// //       </AnimatePresence>
+// //     </>
+// //   );
+// // }
+
 // import React, { useState, useEffect } from "react";
-// import { motion, AnimatePresence } from "framer-motion"; // Importação necessária para a orquestração
+// import { motion, AnimatePresence } from "framer-motion";
 
 // // Estilos Globais
 // import "./styles/App.scss";
 
-// // Vídeo de fundo
-// import bgVideoDark from "./assets/loopFundoDark.mp4";
+// // Vídeos de fundo (Usaremos apenas o Light no fundo após a intro)
 // import bgVideoLight from "./assets/loopFundoClaro.mp4";
 
 // // Componentes
 // import Navbar from "./components/Navbar/Navbar";
-// import IntroAnima from "./components/IntroAnima/IntroAnima"; // Certifique-se de que o arquivo existe nesta pasta
+// import IntroAnima from "./components/IntroAnima/IntroAnima";
 // import Home from "./components/Home/Home";
 // import About from "./components/About/About";
 // import Skills from "./components/Skills/Skills";
@@ -20,14 +255,13 @@
 // import Modal from "./components/modal/Modal";
 // import ThemeToggle from "./components/TheToggle/ThemeToggle";
 
-
 // // --- MOCK DE DADOS - Projects ---
 // const projectsData = [
 //   {
 //     id: 1,
 //     title: "Valoriza App",
 //     tech: "React • JavaScript • Sass • NodeJS • NSQL",
-//     desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema. Link demo e Git não funcionam pois não está no ar!",
+//     desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema.",
 //     demo: "#",
 //     git: "#",
 //     image: "Image/Valoriza/Valoriza-1.png",
@@ -37,7 +271,7 @@
 //     id: 2,
 //     title: "FlowState",
 //     tech: "JavaScript • HTML • BEM",
-//     desc: "Aplicação Pomodoro de produtividade. Desenvolvida para ajudar a todos a melhorarem seu jeito de estudar e evoluirem cada vez mais, projeto desenvolvido para praticar a lógica de programação na qual já tem ajudado mais de 30 pessoas!",
+//     desc: "Aplicação Pomodoro de produtividade. Desenvolvida para ajudar a todos a melhorarem seu jeito de estudar e evoluirem cada vez mais.",
 //     demo: "https://lazarin123.github.io/Projeto-FlowState/",
 //     git: "https://github.com/Lazarin123/Projeto-FlowState",
 //     image: "Image/flowState/FlowState2.png",
@@ -47,7 +281,7 @@
 //     id: 3,
 //     title: "Caixa Eletrônico - C",
 //     tech: "C",
-//     desc: "Projeto desenvolvido na Linguagem C de simulador de caixa eletrônico, na qual foi aplicado a lógica e estruturas para o sistema, um projeto na qual evolui e aprimorei meus conhecimentos em Lógica de Programação e Linguagem C",
+//     desc: "Projeto desenvolvido na Linguagem C de simulador de caixa eletrônico, aplicando lógica e estruturas complexas.",
 //     demo: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
 //     git: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
 //     image: "Image/caixa/Simulador-Caixa.png",
@@ -57,7 +291,7 @@
 //     id: 4,
 //     title: "Carnivoros e Herbivoros",
 //     tech: "JavaScript • Lógica de Programação",
-//     desc: "Projeto voltado para o desenvolvimento BackEnd, de um jogo de Carnivoros e Herbivoros na qual foi aplicado a lógica de programação para o desenvolvimento do projeto!",
+//     desc: "Projeto voltado para o desenvolvimento BackEnd, simulando um ecossistema com lógica de programação pura.",
 //     demo: "https://github.com/Lazarin123/js_herbivores_and_carnivores",
 //     git: "https://github.com/Lazarin123/js_herbivores_and_carnivores",
 //     image: "Image/CH/Carnivoros e Herbivoros.png",
@@ -67,7 +301,7 @@
 //     id: 5,
 //     title: "My Bike - Landing Page",
 //     tech: "JavaScript • HMTL • CSS/BEM",
-//     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, e praticar a lógica de programação no desenvolvimento FrontEnd Vanilla, Projeto de LandingPage para a empresa MyBike na qual evolui muito com esse desenvolvimento!",
+//     desc: "Landing Page focada em design responsivo e arquitetura de estilos moderna.",
 //     demo: "https://lazarin123.github.io/layout_landing-page/",
 //     git: "https://github.com/Lazarin123/Landing-Page",
 //     image: "Image/MyBike/MyBike.png",
@@ -77,7 +311,7 @@
 //     id: 6,
 //     title: "PokeDex",
 //     tech: "JavaScript • HMTL • CSS/BEM • API",
-//     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Integração de APIS e praticar a lógica de programação no desenvolvimento FrontEnd Vanilla, Projeto de PokeDex na qual evolui muito com esse desenvolvimento!",
+//     desc: "Integração de APIs e manipulação dinâmica de dados em FrontEnd Vanilla.",
 //     demo: "https://lazarin123.github.io/PokeDex-JS/",
 //     git: "https://github.com/Lazarin123/PokeDex-JS",
 //     image: "Image/pokedex/PokeDex2.png",
@@ -87,7 +321,7 @@
 //     id: 7,
 //     title: "Conversor de Moedas",
 //     tech: "JavaScript • HMTL • CSS/BEM • API",
-//     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Integração de APIS e praticar a lógica de programação, Projeto de Conversor de Moedas na qual conta com uma taxa de atualização de 30s para melhor experiência!",
+//     desc: "Aplicação com taxas de atualização em tempo real para melhor experiência do usuário.",
 //     demo: "https://lazarin123.github.io/Conversor-de-Moedas-JS/",
 //     git: "https://github.com/Lazarin123/Conversor-de-Moedas-JS",
 //     image: "Image/conversor/conversor2.png",
@@ -97,7 +331,7 @@
 //     id: 8,
 //     title: "Jogo 2048",
 //     tech: "JavaScript • HMTL • CSS/BEM",
-//     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação, Projeto do jogo 2048 na qual conta com um jogo de quem faz mais pontos e muito bom para a evolução da lógica! Funciona apenas em Desktop (Computadores)",
+//     desc: "Clássico jogo 2048 desenvolvido para praticar lógica matricial e animações CSS.",
 //     demo: "https://lazarin123.github.io/js_2048_game/",
 //     git: "https://github.com/Lazarin123/Projeto-Jogo-2048",
 //     image: "Image/2048/2048-1.png",
@@ -107,7 +341,7 @@
 //     id: 9,
 //     title: "Buscador de CEP",
 //     tech: "JavaScript • HMTL • CSS/BEM • API",
-//     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação e APIs, Projeto do Buscador de CEP na qual conta com um projeto de buscador de cep aonde pratiquei minha lógica de programação e integração de APIs!",
+//     desc: "Utilitário de busca de endereços através da integração com ViaCEP API.",
 //     demo: "https://lazarin123.github.io/Project-Api/",
 //     git: "https://github.com/Lazarin123/Project-Api",
 //     image: "Image/cep/buscador.png",
@@ -115,7 +349,6 @@
 //   },
 // ];
 
-// // --- MOCK DE DADOS - Hard-Skills ---
 // const hardSkillsData = [
 //   { name: "React + TypeScript", percent: 78 },
 //   { name: "JavaScript & DOM", percent: 89 },
@@ -125,7 +358,6 @@
 //   { name: "SQL", percent: 57 },
 // ];
 
-// // --- MOCK DE DADOS - Soft-Skills ---
 // const softSkillsData = [
 //   { name: "skills.comunicacao", percent: 89 },
 //   { name: "skills.trabalho_em_equipe", percent: 89 },
@@ -136,26 +368,16 @@
 // ];
 
 // export default function App() {
-//   const [theme, setTheme] = useState(
-//     () => localStorage.getItem("theme") || "dark",
-//   );
+//   // Definimos o tema como "light" por padrão para atender seu pedido
+//   const [theme, setTheme] = useState("light");
 //   const [selectedProject, setSelectedProject] = useState(null);
 //   const [activeSection, setActiveSection] = useState("");
-  
-//   // Adicionado: Estado para controlar se a intro terminou
-//   const [isIntroFinished, setIsIntroFinished] = useState(false);
 
 //   useEffect(() => {
-//     if (theme === "light") {
-//       document.documentElement.setAttribute("data-theme", "light");
-//     } else {
-//       document.documentElement.removeAttribute("data-theme");
-//     }
-//     localStorage.setItem("theme", theme);
-//   }, [theme]);
-
-//   const toggleTheme = () =>
-//     setTheme((prev) => (prev === "light" ? "dark" : "light"));
+//     // Forçamos o modo claro (Light)
+//     document.documentElement.setAttribute("data-theme", "light");
+//     localStorage.setItem("theme", "light");
+//   }, []);
 
 //   useEffect(() => {
 //     const handleScroll = () => {
@@ -173,74 +395,57 @@
 //   }, []);
 
 //   return (
-//     <>
-//       <AnimatePresence mode="wait">
-//         {!isIntroFinished ? (
-//           /* --- FASE 1: ANIMAÇÃO DE ENTRADA (VÍDEO) --- */
-//           <motion.div
-//             key="intro"
-//             exit={{ opacity: 0 }}
-//             transition={{ duration: 1 }} // Saída suave do vídeo
+//     <div className="app-main-wrapper" style={{ backgroundColor: "#FFFFFF" }}>
+//       {/* 1. INTRO ANIMA - Fundo Escuro Inicial */}
+//       <IntroAnima />
+
+//       {/* 2. PORTFÓLIO - Revelado em Branco Puro */}
+//       <div className="portfolio-layer" style={{ position: "relative", zIndex: 10, marginTop: "-100vh" }}>
+//         <div className="global-bg" style={{ backgroundColor: "#FFFFFF" }}>
+//           <video
+//             autoPlay
+//             loop
+//             muted
+//             playsInline
+//             className="global-bg__video"
 //           >
-//             <IntroAnima onFinished={() => setIsIntroFinished(true)} />
-//           </motion.div>
-//         ) : (
-//           /* --- FASE 2: CONTEÚDO REAL DO SITE --- */
-//           <motion.div
-//             key="content"
-//             initial={{ opacity: 0 }}
-//             animate={{ opacity: 1 }}
-//             transition={{ duration: 1.2 }} // Entrada suave do portfólio
-//           >
-//             <div className="global-bg">
-//               <video
-//                 key={theme} // O 'key' força o React a recarregar o elemento de vídeo ao trocar o tema
-//                 autoPlay
-//                 loop
-//                 muted
-//                 playsInline
-//                 className="global-bg__video"
-//               >
-//                 {/* Se theme for light, usa bgVideoLight. Caso contrário, bgVideoDark */}
-//                 <source
-//                   src={theme === "light" ? bgVideoLight : bgVideoDark}
-//                   type="video/mp4"
-//                 />
-//               </video>
-//               <div className="global-bg__overlay"></div>
-//             </div>
+//             <source src={bgVideoLight} type="video/mp4" />
+//           </video>
+//           {/* Overlay claro para garantir leitura */}
+//           <div className="global-bg__overlay" style={{ background: "rgba(255, 255, 255, 0.4)" }}></div>
+//         </div>
 
-//             <Navbar activeSection={activeSection} />
+//         <Navbar activeSection={activeSection} />
 
-//             <main className="main-content-wrapper">
-//               <Home />
-//               <About />
-//               <Projects data={projectsData} onProjectClick={setSelectedProject} />
-//               <Skills hardSkills={hardSkillsData} softSkills={softSkillsData} />
-//               <Contact />
-//             </main>
+//         <main className="main-content-wrapper">
+//           <Home />
+//           <About />
+//           <Projects data={projectsData} onProjectClick={setSelectedProject} />
+//           <Skills hardSkills={hardSkillsData} softSkills={softSkillsData} />
+//           <Contact />
+//         </main>
 
-//             <Footer theme={theme} toggleTheme={toggleTheme} />
+//         <Footer theme="light" toggleTheme={() => {}} />
 
-//             <Modal
-//               project={selectedProject}
-//               onClose={() => setSelectedProject(null)}
-//             />
-//             <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-//           </motion.div>
-//         )}
-//       </AnimatePresence>
-//     </>
+//         <Modal
+//           project={selectedProject}
+//           onClose={() => setSelectedProject(null)}
+//         />
+//         {/* Toggle escondido ou desativado se quiser manter apenas o modo claro */}
+//         <ThemeToggle theme="light" toggleTheme={() => {}} />
+//       </div>
+//     </div>
 //   );
 // }
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 
 // Estilos Globais
 import "./styles/App.scss";
 
-// Vídeos de fundo (Usaremos apenas o Light no fundo após a intro)
+// Vídeos de fundo
+import bgVideoDark from "./assets/loopFundoDark.mp4";
 import bgVideoLight from "./assets/loopFundoClaro.mp4";
 
 // Componentes
@@ -261,7 +466,7 @@ const projectsData = [
     id: 1,
     title: "Valoriza App",
     tech: "React • JavaScript • Sass • NodeJS • NSQL",
-    desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema.",
+    desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema. Link demo e Git não funcionam pois não está no ar!",
     demo: "#",
     git: "#",
     image: "Image/Valoriza/Valoriza-1.png",
@@ -271,7 +476,7 @@ const projectsData = [
     id: 2,
     title: "FlowState",
     tech: "JavaScript • HTML • BEM",
-    desc: "Aplicação Pomodoro de produtividade. Desenvolvida para ajudar a todos a melhorarem seu jeito de estudar e evoluirem cada vez mais.",
+    desc: "Aplicação Pomodoro de produtividade. Desenvolvida para ajudar a todos a melhorarem seu jeito de estudar e evoluirem cada vez mais, projeto desenvolvido para praticar a lógica de programação na qual já tem ajudado mais de 30 pessoas!",
     demo: "https://lazarin123.github.io/Projeto-FlowState/",
     git: "https://github.com/Lazarin123/Projeto-FlowState",
     image: "Image/flowState/FlowState2.png",
@@ -281,7 +486,7 @@ const projectsData = [
     id: 3,
     title: "Caixa Eletrônico - C",
     tech: "C",
-    desc: "Projeto desenvolvido na Linguagem C de simulador de caixa eletrônico, aplicando lógica e estruturas complexas.",
+    desc: "Projeto desenvolvido na Linguagem C de simulador de caixa eletrônico, na qual foi aplicado a lógica e estruturas para o sistema, um projeto na qual evolui e aprimorei meus conhecimentos em Lógica de Programação e Linguagem C",
     demo: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
     git: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
     image: "Image/caixa/Simulador-Caixa.png",
@@ -291,7 +496,7 @@ const projectsData = [
     id: 4,
     title: "Carnivoros e Herbivoros",
     tech: "JavaScript • Lógica de Programação",
-    desc: "Projeto voltado para o desenvolvimento BackEnd, simulando um ecossistema com lógica de programação pura.",
+    desc: "Projeto voltado para o desenvolvimento BackEnd, de um jogo de Carnivoros e Herbivoros na qual foi aplicado a lógica de programação para o desenvolvimento do projeto!",
     demo: "https://github.com/Lazarin123/js_herbivores_and_carnivores",
     git: "https://github.com/Lazarin123/js_herbivores_and_carnivores",
     image: "Image/CH/Carnivoros e Herbivoros.png",
@@ -301,7 +506,7 @@ const projectsData = [
     id: 5,
     title: "My Bike - Landing Page",
     tech: "JavaScript • HMTL • CSS/BEM",
-    desc: "Landing Page focada em design responsivo e arquitetura de estilos moderna.",
+    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, e praticar a lógica de programação no desenvolvimento FrontEnd Vanilla, Projeto de LandingPage para a empresa MyBike na qual evolui muito com esse desenvolvimento!",
     demo: "https://lazarin123.github.io/layout_landing-page/",
     git: "https://github.com/Lazarin123/Landing-Page",
     image: "Image/MyBike/MyBike.png",
@@ -311,7 +516,7 @@ const projectsData = [
     id: 6,
     title: "PokeDex",
     tech: "JavaScript • HMTL • CSS/BEM • API",
-    desc: "Integração de APIs e manipulação dinâmica de dados em FrontEnd Vanilla.",
+    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Integração de APIS e praticar a lógica de programação no desenvolvimento FrontEnd Vanilla, Projeto de PokeDex na qual evolui muito com esse desenvolvimento!",
     demo: "https://lazarin123.github.io/PokeDex-JS/",
     git: "https://github.com/Lazarin123/PokeDex-JS",
     image: "Image/pokedex/PokeDex2.png",
@@ -321,7 +526,7 @@ const projectsData = [
     id: 7,
     title: "Conversor de Moedas",
     tech: "JavaScript • HMTL • CSS/BEM • API",
-    desc: "Aplicação com taxas de atualização em tempo real para melhor experiência do usuário.",
+    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Integração de APIS e praticar a lógica de programação, Projeto de Conversor de Moedas na qual conta com uma taxa de atualização de 30s para melhor experiência!",
     demo: "https://lazarin123.github.io/Conversor-de-Moedas-JS/",
     git: "https://github.com/Lazarin123/Conversor-de-Moedas-JS",
     image: "Image/conversor/conversor2.png",
@@ -331,7 +536,7 @@ const projectsData = [
     id: 8,
     title: "Jogo 2048",
     tech: "JavaScript • HMTL • CSS/BEM",
-    desc: "Clássico jogo 2048 desenvolvido para praticar lógica matricial e animações CSS.",
+    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação, Projeto do jogo 2048 na qual conta com um jogo de quem faz mais pontos e muito bom para a evolução da lógica! Funciona apenas em Desktop (Computadores)",
     demo: "https://lazarin123.github.io/js_2048_game/",
     git: "https://github.com/Lazarin123/Projeto-Jogo-2048",
     image: "Image/2048/2048-1.png",
@@ -341,7 +546,7 @@ const projectsData = [
     id: 9,
     title: "Buscador de CEP",
     tech: "JavaScript • HMTL • CSS/BEM • API",
-    desc: "Utilitário de busca de endereços através da integração com ViaCEP API.",
+    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação e APIs, Projeto do Buscador de CEP na qual conta com um projeto de buscador de cep aonde pratiquei minha lógica de programação e integração de APIs!",
     demo: "https://lazarin123.github.io/Project-Api/",
     git: "https://github.com/Lazarin123/Project-Api",
     image: "Image/cep/buscador.png",
@@ -368,16 +573,26 @@ const softSkillsData = [
 ];
 
 export default function App() {
-  // Definimos o tema como "light" por padrão para atender seu pedido
-  const [theme, setTheme] = useState("light");
+  // O Estado de Tema restaurado para a sua lógica original
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") || "dark"
+  );
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeSection, setActiveSection] = useState("");
 
+  // O Hook de Scroll para o "Escurecimento do Footer"
+  const { scrollYProgress } = useScroll();
+  // Começa a escurecer aos 80% do site e atinge 65% de preto no final (100%).
+  const footerDarkness = useTransform(scrollYProgress, [0.8, 1], [0, 0.65]);
+
+  // Aplica a troca real do Data-Theme no HTML
   useEffect(() => {
-    // Forçamos o modo claro (Light)
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light");
-  }, []);
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -395,24 +610,36 @@ export default function App() {
   }, []);
 
   return (
-    <div className="app-main-wrapper" style={{ backgroundColor: "#FFFFFF" }}>
-      {/* 1. INTRO ANIMA - Fundo Escuro Inicial */}
+    <div className="app-main-wrapper">
+      
+      {/* OVERLAY DO FOOTER: Fica sobre o site, mas não cobre Navbar (z-index médio). */}
+      {/* Escurece apenas quando rola até o final, nunca ficando 100% preto. */}
+      <motion.div 
+        className="fixed inset-0 pointer-events-none bg-black z-[45]" 
+        style={{ opacity: footerDarkness }} 
+      />
+
+      {/* 1. INTRO ANIMA - Coexiste com o site via Scroll */}
       <IntroAnima />
 
-      {/* 2. PORTFÓLIO - Revelado em Branco Puro */}
+      {/* 2. CONTEÚDO DO SITE - Revelado pelo scroll */}
       <div className="portfolio-layer" style={{ position: "relative", zIndex: 10, marginTop: "-100vh" }}>
-        <div className="global-bg" style={{ backgroundColor: "#FFFFFF" }}>
+        
+        <div className="global-bg">
           <video
+            key={theme}
             autoPlay
             loop
             muted
             playsInline
             className="global-bg__video"
           >
-            <source src={bgVideoLight} type="video/mp4" />
+            <source
+              src={theme === "light" ? bgVideoLight : bgVideoDark}
+              type="video/mp4"
+            />
           </video>
-          {/* Overlay claro para garantir leitura */}
-          <div className="global-bg__overlay" style={{ background: "rgba(255, 255, 255, 0.4)" }}></div>
+          <div className="global-bg__overlay"></div>
         </div>
 
         <Navbar activeSection={activeSection} />
@@ -425,14 +652,14 @@ export default function App() {
           <Contact />
         </main>
 
-        <Footer theme="light" toggleTheme={() => {}} />
+        <Footer theme={theme} toggleTheme={toggleTheme} />
 
         <Modal
           project={selectedProject}
           onClose={() => setSelectedProject(null)}
         />
-        {/* Toggle escondido ou desativado se quiser manter apenas o modo claro */}
-        <ThemeToggle theme="light" toggleTheme={() => {}} />
+        
+        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
       </div>
     </div>
   );
