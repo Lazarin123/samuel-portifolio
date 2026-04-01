@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin } from 'lucide-react'; // Ícones opcionais
+import { ArrowRight, Github, Linkedin } from "lucide-react"; // Ícones opcionais
 
 const HeroSection = () => {
   // 1. Variantes de Animação para o Container Principal
