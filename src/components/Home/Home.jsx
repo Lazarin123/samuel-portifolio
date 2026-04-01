@@ -15,7 +15,7 @@ export default function Home() {
         playsInline
         className="hero__video"
       >
-        <source src="/vídeoHero-Section.mp4" type="video/mp4" />
+        <source src="../../assets/VideoHero.mp4" type="video/mp4" />
         Seu navegador não suporta vídeos.
       </video>
 
