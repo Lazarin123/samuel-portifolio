@@ -6,14 +6,19 @@ export default function Home() {
   const { t } = useTranslation();
 
   return (
-    <section
-      id="hero"
-      className="hero"
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1920&auto=format&fit=crop')",
-      }}
-    >
+    <section id="hero" className="hero">
+      {/* O vídeo entra aqui, antes do overlay */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="hero__video"
+      >
+        <source src="/vídeoHero-Section.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
+
       <div className="hero__overlay"></div>
 
       <div className="hero__content">

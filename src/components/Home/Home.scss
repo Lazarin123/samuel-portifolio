@@ -11,10 +11,23 @@
   flex-direction: column; 
   align-items: center; 
   justify-content: center;
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat;
+  /* background-size removido pois o vídeo ocupará o lugar */
+  overflow: hidden; // Garante que o vídeo não vaze
   margin-top: 0; 
+
+  // --- NOVO: Estilo para o Vídeo de Fundo ---
+  &__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    object-fit: cover; // Comportamento idêntico ao background-size: cover
+  }
 
   &__overlay {
     position: absolute; 
@@ -99,13 +112,13 @@
     padding: 0.6rem 1.8rem; 
     border-radius: 30px;
     transition: all 0.3s ease;
-    display: inline-block; // Garante que bordas e paddings funcionem bem
+    display: inline-block; 
     
     &:hover { 
       background-color: var(--color-accent-purple); 
       border-color: var(--color-accent-purple); 
       transform: translateY(-3px); 
-      color: #ffffff; // Mantém a cor branca no hover
+      color: #ffffff; 
     }
   }
 
