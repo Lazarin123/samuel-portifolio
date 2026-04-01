@@ -1,16 +1,39 @@
+// /* =========================================
+//    Arquivo Principal de Estilos Globais
+//    ========================================= */
+
+// // 1. Variáveis (Cores, fontes, temas)
+// @use './abstracts/variables';
+
+// // 2. Estilos Globais (Reset, body, classes utilitárias)
+// @use './base/global';
+
+
+// video {
+//   pointer-events: none; /* Impede que o usuário consiga clicar no vídeo */
+// }
+
+// html, body {
+//   overflow-x: hidden;
+//   width: 100%;
+//   position: relative;
+//   margin: 0;
+//   padding: 0;
+//   scroll-behavior: smooth;
+// }
+
 /* =========================================
    Arquivo Principal de Estilos Globais
    ========================================= */
 
-// 1. Variáveis (Cores, fontes, temas)
+// 1. Variáveis
 @use './abstracts/variables';
 
-// 2. Estilos Globais (Reset, body, classes utilitárias)
+// 2. Estilos Globais
 @use './base/global';
 
-
 video {
-  pointer-events: none; /* Impede que o usuário consiga clicar no vídeo */
+  pointer-events: none;
 }
 
 html, body {
@@ -19,4 +42,39 @@ html, body {
   position: relative;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  background-color: #050505; // Fundo base para evitar flash branco
+}
+
+/* Camadas de Transição do Portfólio */
+.app-main-wrapper {
+  position: relative;
+}
+
+.portfolio-layer {
+  // Garante que o conteúdo seja interativo
+  pointer-events: auto;
+}
+
+/* Garante que o vídeo de fundo global não fique por cima da IntroAnima */
+.global-bg {
+  z-index: 0;
+}
+
+/* Estilos de Texto Massivo para a IntroAnima (Fallback caso os inline falhem) */
+.intro-title {
+  font-family: 'Inter', sans-serif; // Ou sua fonte principal
+}
+
+/* Responsividade para o margin-top do portfólio */
+@media (max-width: 992px) {
+  .portfolio-layer {
+    margin-top: -90vh !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-layer {
+    margin-top: -85vh !important;
+  }
 }
