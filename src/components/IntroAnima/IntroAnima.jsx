@@ -8,9 +8,10 @@ const IntroAnima = () => {
   const scale = useTransform(scrollYProgress, [0, 0.35], [1, 0.1]);
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   
-  // 2. Separação e Rotação das palavras (HELLO vai pra esquerda, DEV vai pra direita)
-  const xLeft = useTransform(scrollYProgress, [0, 0.3], [0, -20vw]);
-  const xRight = useTransform(scrollYProgress, [0, 0.3], [0, 20vw]);
+  // 2. Separação e Rotação das palavras 
+  // CORREÇÃO AQUI: Valores com 'vw' agora estão entre aspas ("0vw", "-20vw")
+  const xLeft = useTransform(scrollYProgress, [0, 0.3], ["0vw", "-20vw"]);
+  const xRight = useTransform(scrollYProgress, [0, 0.3], ["0vw", "20vw"]);
   const rotateLeft = useTransform(scrollYProgress, [0, 0.3], [0, -25]); // Gira -25 graus
   const rotateRight = useTransform(scrollYProgress, [0, 0.3], [0, 25]); // Gira 25 graus
 
