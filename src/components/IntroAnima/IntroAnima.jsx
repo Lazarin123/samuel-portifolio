@@ -66,7 +66,7 @@ const IntroAnima = () => {
               textTransform: "uppercase",
             }}
           >
-            HELLO
+            Welcome To
           </motion.h1>
 
           <motion.h1
@@ -81,7 +81,7 @@ const IntroAnima = () => {
               textTransform: "uppercase",
             }}
           >
-            DEV!
+            My Page
           </motion.h1>
         </motion.div>
 
