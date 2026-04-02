@@ -2,14 +2,11 @@
    Arquivo Principal de Estilos Globais
    ========================================= */
 
-// 1. Variáveis (Cores, fontes, temas)
 @use './abstracts/variables';
-
-// 2. Estilos Globais (Reset, body, classes utilitárias)
 @use './base/global';
 
 video {
-  pointer-events: none; /* Impede que o usuário consiga clicar no vídeo */
+  pointer-events: none;
 }
 
 html, body {
@@ -19,17 +16,4 @@ html, body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  // Fundo dinâmico para respeitar a variável do seu tema original
-  background-color: var(--color-bg-primary, #050505); 
-}
-
-/* Container Principal */
-.app-main-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-/* Garante que o vídeo de fundo global fique no nível correto */
-.global-bg {
-  z-index: 0;
 }

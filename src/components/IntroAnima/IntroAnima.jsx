@@ -1,108 +1,108 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const IntroAnima = () => {
   const { scrollY } = useScroll();
-  const [vh, setVh] = useState(800);
 
-  // Calcula a altura da tela para sincronizar o fim da animação
-  useEffect(() => {
-    setVh(window.innerHeight);
-    const handleResize = () => setVh(window.innerHeight);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  // A animação acontece enquanto você rola os primeiros 500 pixels
+  const scale = useTransform(scrollY, [0, 500], [1, 0.2]);
+  const opacity = useTransform(scrollY, [0, 600], [1, 0]);
 
-  const scrollEnd = vh * 1.2; // A animação dura 120% da altura da tela
+  // Letras separam e giram
+  const xLeft = useTransform(scrollY, [0, 500], ["0vw", "-40vw"]);
+  const xRight = useTransform(scrollY, [0, 500], ["0vw", "40vw"]);
+  const rotateLeft = useTransform(scrollY, [0, 500], [0, -20]);
+  const rotateRight = useTransform(scrollY, [0, 500], [0, 20]);
 
-  // 1. Zoom Out (Indo pro fundo) e Sumindo
-  const scale = useTransform(scrollY, [0, scrollEnd], [1, 0.2]);
-  const opacity = useTransform(scrollY, [0, scrollEnd * 0.8], [1, 0]);
-  
-  // 2. Separação e Rotação Lateral (Um tomba pra cada lado)
-  const xLeft = useTransform(scrollY, [0, scrollEnd], ["0vw", "-35vw"]);
-  const xRight = useTransform(scrollY, [0, scrollEnd], ["0vw", "35vw"]);
-  const rotateLeft = useTransform(scrollY, [0, scrollEnd], [0, -25]);
-  const rotateRight = useTransform(scrollY, [0, scrollEnd], [0, 25]);
-
-  // 3. Fundo preto absoluto que se dissolve ("clareando" o site real)
-  const bgOpacity = useTransform(scrollY, [0, scrollEnd], [1, 0]);
-
-  // Libera os cliques no site assim que a animação termina
-  const pointerEvents = useTransform(scrollY, (y) => (y > scrollEnd ? 'none' : 'auto'));
+  // Fundo preto e eventos de clique desativam quando a animação termina!
+  const bgOpacity = useTransform(scrollY, [0, 600], [1, 0]);
+  const pointerEvents = useTransform(scrollY, [0, 600], ["auto", "none"]);
 
   return (
-    <motion.div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 9999,
-        pointerEvents, // Trava a tela enquanto a animação roda, libera depois
-      }}
-    >
-      {/* Camada Preta de Fundo */}
+    <div style={{ height: "100vh", width: "100%" }}>
       <motion.div
         style={{
-          position: 'absolute',
+          position: "fixed",
           inset: 0,
-          backgroundColor: '#050505',
-          opacity: bgOpacity,
-        }}
-      />
-
-      {/* Textos Empilhados e Animados */}
-      <motion.div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          display: 'flex',
-          flexDirection: 'column', // Garante que fiquem um embaixo do outro
-          alignItems: 'center',
-          justifyContent: 'center',
-          scale,
-          opacity,
+          zIndex: 9999,
+          pointerEvents: pointerEvents,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
         }}
       >
-        <motion.h1 
-          style={{ 
-            x: xLeft, 
-            rotateZ: rotateLeft, 
-            fontSize: '15vw', 
-            fontWeight: 900, 
-            color: '#FFFFFF', 
-            margin: 0, 
-            lineHeight: 0.85 
+        {/* Camada Preta que esmaece revelando o site original embaixo */}
+        <motion.div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "#050505",
+            opacity: bgOpacity,
+            zIndex: -1,
           }}
-        >
-          HELLO
-        </motion.h1>
-        
-        <motion.h1 
-          style={{ 
-            x: xRight, 
-            rotateZ: rotateRight, 
-            fontSize: '15vw', 
-            fontWeight: 900, 
-            color: '#6d28d9', 
-            margin: 0, 
-            lineHeight: 0.85 
-          }}
-        >
-          DEV!
-        </motion.h1>
+        />
 
-        {/* Indicador de Scroll interativo */}
-        <motion.div style={{ position: 'absolute', bottom: '10vh' }}>
-          <motion.p 
-            animate={{ y: [0, 10, 0] }} 
-            transition={{ repeat: Infinity, duration: 2 }} 
-            style={{ color: 'rgba(255,255,255,0.4)', letterSpacing: '4px', textTransform: 'uppercase' }}
+        {/* Textos que animam */}
+        <motion.div
+          style={{
+            scale,
+            opacity,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <motion.h1
+            style={{
+              x: xLeft,
+              rotateZ: rotateLeft,
+              fontSize: "15vw",
+              fontWeight: 900,
+              color: "#FFFFFF",
+              margin: 0,
+              lineHeight: 0.85,
+              textTransform: "uppercase",
+            }}
           >
-            Scroll
+            HELLO
+          </motion.h1>
+
+          <motion.h1
+            style={{
+              x: xRight,
+              rotateZ: rotateRight,
+              fontSize: "15vw",
+              fontWeight: 900,
+              color: "#6d28d9",
+              margin: 0,
+              lineHeight: 0.85,
+              textTransform: "uppercase",
+            }}
+          >
+            DEV!
+          </motion.h1>
+        </motion.div>
+
+        {/* Scroll hint */}
+        <motion.div style={{ opacity, position: "absolute", bottom: "10vh" }}>
+          <motion.p
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            style={{
+              fontSize: "0.9rem",
+              color: "rgba(255,255,255,0.4)",
+              letterSpacing: "0.4rem",
+              textTransform: "uppercase",
+              margin: 0,
+            }}
+          >
+            Scroll Down
           </motion.p>
         </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 
