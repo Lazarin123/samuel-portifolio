@@ -1,7 +1,11 @@
+//--- Imports ---
 import React, { useState, useEffect } from "react";
 
 // Estilos Globais
 import "./styles/App.scss";
+
+//importação do Lenis
+import Lenis from "lenis";
 
 // Vídeos de fundo
 import bgVideoDark from "./assets/loopFundoDark.mp4";
@@ -21,6 +25,7 @@ import ThemeToggle from "./components/TheToggle/ThemeToggle";
 
 // --- MOCK DE DADOS - Projects ---
 const projectsData = [
+  //Projeto 1
   {
     id: 1,
     title: "Valoriza App",
@@ -31,6 +36,7 @@ const projectsData = [
     image: "Image/Valoriza/Valoriza-1.png",
     imageModal: "Image/Valoriza/Valoriza-2.png",
   },
+  //Projeto 2
   {
     id: 2,
     title: "FlowState",
@@ -41,6 +47,7 @@ const projectsData = [
     image: "Image/flowState/FlowState2.png",
     imageModal: "Image/flowState/FlowState1.png",
   },
+  //Projeto 3
   {
     id: 3,
     title: "Caixa Eletrônico - C",
@@ -51,6 +58,7 @@ const projectsData = [
     image: "Image/caixa/Simulador-Caixa.png",
     imageModal: "Image/caixa/Simulador-Caixa.png",
   },
+  //Projeto 4
   {
     id: 4,
     title: "Carnivoros e Herbivoros",
@@ -61,6 +69,7 @@ const projectsData = [
     image: "Image/CH/Carnivoros e Herbivoros.png",
     imageModal: "Image/CH/Carnivoros e Herbivoros.png",
   },
+  //Projeto 5
   {
     id: 5,
     title: "My Bike - Landing Page",
@@ -71,6 +80,7 @@ const projectsData = [
     image: "Image/MyBike/MyBike.png",
     imageModal: "Image/MyBike/MyBike1.png",
   },
+  //Projeto 6
   {
     id: 6,
     title: "PokeDex",
@@ -81,6 +91,7 @@ const projectsData = [
     image: "Image/pokedex/PokeDex2.png",
     imageModal: "Image/pokedex/PokeDex.1.png",
   },
+  //Projeto 7
   {
     id: 7,
     title: "Conversor de Moedas",
@@ -91,6 +102,7 @@ const projectsData = [
     image: "Image/conversor/conversor2.png",
     imageModal: "Image/conversor/conversor1.png",
   },
+  //Projeto 8
   {
     id: 8,
     title: "Jogo 2048",
@@ -101,6 +113,7 @@ const projectsData = [
     image: "Image/2048/2048-1.png",
     imageModal: "Image/2048/2048-1.png",
   },
+  //Projeto 9
   {
     id: 9,
     title: "Buscador de CEP",
@@ -113,6 +126,7 @@ const projectsData = [
   },
 ];
 
+//--- HardSkills ---
 const hardSkillsData = [
   { name: "React + TypeScript", percent: 78 },
   { name: "JavaScript & DOM", percent: 89 },
@@ -122,6 +136,7 @@ const hardSkillsData = [
   { name: "SQL", percent: 57 },
 ];
 
+//--- SoftSkills ---
 const softSkillsData = [
   { name: "skills.comunicacao", percent: 89 },
   { name: "skills.trabalho_em_equipe", percent: 89 },
@@ -137,6 +152,29 @@ export default function App() {
   );
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeSection, setActiveSection] = useState("");
+
+  //--- Configuração Scroll Suave (Lenis) ---
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2, // Duração do "deslizamento" (quanto maior, mais lento)
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Curva de aceleração suave
+      smoothWheel: true,
+    });
+
+    // Função para manter a animação rodando sincronizada com o monitor
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Limpeza ao desmontar o componente
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+  // ==========================================
 
   useEffect(() => {
     if (theme === "light") {
