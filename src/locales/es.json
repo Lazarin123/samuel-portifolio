@@ -7,7 +7,7 @@
   },
   "hero": {
     "role": "Desarrollador Fullstack",
-    "subtitle": "Fundador de Vallis Tech y Dev con enfoque Frontend (React, TS, Sass)",
+    "subtitle": "Fundador de Vollup Tech y Dev con enfoque Frontend (React, TS, Sass)",
     "scroll_down": "Desplázate hacia abajo"
   },
   "about": {
@@ -15,7 +15,7 @@
     "p1": "Soy un desarrollador impulsado por la creación de interfaces limpias y experiencias digitales intuitivas. Estudiante de Ingeniería de Software (2029), combino la pasión por la arquitectura de software moderna con una sólida base en Calidad de Software (QA) y Soporte Técnico.",
     "p2_1": "Además de desarrollador, soy fundador de",
     "p2_2": "una startup dedicada a crear soluciones web escalables, donde aplico mi visión de negocios y liderazgo técnico enfocado en el frontend.",
-    "p2_strong": "Vallis Tech",
+    "p2_strong": "Vollup Tech",
     "magic_prompt": "Haz clic en la foto para ver la magia ↑",
     "trajectory_title": "Trayectoria Profesional",
     "trajectory_text": "Mi viaje comenzó en la Calidad de Software (QA), desarrollando un ojo crítico para los errores y la automatización de pruebas (BDD/Robot). Hoy, aplico esta mentalidad de \"test-first\" en el desarrollo Fullstack.",
