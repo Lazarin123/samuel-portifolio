@@ -32,7 +32,7 @@ export default function About() {
           <h2 className="about__bio-title">{t("about.title")}</h2>
           <p className="about__text">{t("about.p1")}</p>
           <p className="about__text">
-            {t("about.p2_1")} <strong>Vallis Tech</strong>, {t("about.p2_2")}
+            {t("about.p2_1")} <strong>FullStack</strong>, {t("about.p2_2")}
           </p>
         </div>
       </div>
