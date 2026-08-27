@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./Home.scss";
-import VideoHome from "../../assets/VideoHero.mp4";
+import VideoHome from "../../assets/hero-video.mp4";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -9,13 +9,7 @@ export default function Home() {
   return (
     <section id="hero" className="hero">
       {/* O vídeo entra aqui, antes do overlay */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="hero__video"
-      >
+      <video autoPlay loop muted playsInline className="hero__video">
         <source src={VideoHome} type="video/mp4" />
         Seu navegador não suporta vídeos.
       </video>

@@ -14,7 +14,7 @@ export default function About() {
             <div className={`card-flip-inner ${isFlipped ? "is-flipped" : ""}`}>
               <div className="front">
                 <div className="img-placeholder">
-                  <img src="Image/Foto-Perfil.png" alt="Foto Samuel Lazarin" />
+                  <img src="Image/foto.jpg" alt="Foto Samuel Lazarin" />
                 </div>
               </div>
               <div className="back">
