@@ -116,13 +116,13 @@ const projectsData = [
   //Projeto 9
   {
     id: 9,
-    title: "Buscador de CEP",
+    title: "Habit Tracker Pro",
     tech: "JavaScript • HMTL • CSS/BEM • API",
-    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação e APIs, Projeto do Buscador de CEP na qual conta com um projeto de buscador de cep aonde pratiquei minha lógica de programação e integração de APIs!",
-    demo: "https://lazarin123.github.io/Project-Api/",
-    git: "https://github.com/Lazarin123/Project-Api",
-    image: "Image/cep/buscador.png",
-    imageModal: "Image/cep/buscador.png",
+    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação e APIs, Projeto de contador de Hábitos para sua melhor qualidade e evolução constante!",
+    demo: "https://habit-tracker-pro-ten.vercel.app/",
+    git: "https://github.com/Lazarin123/Habit-Tracker-Pro",
+    image: "Image/Habit-Tracker/Habit-Tracker.png",
+    imageModal: "Image/Habit-Tracker/Habit-Tracker.png",
   },
 ];
 
