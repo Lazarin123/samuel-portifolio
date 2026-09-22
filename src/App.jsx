@@ -94,13 +94,13 @@ const projectsData = [
   //Projeto 7
   {
     id: 7,
-    title: "Conversor de Moedas",
-    tech: "JavaScript • HMTL • CSS/BEM • API",
-    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Integração de APIS e praticar a lógica de programação, Projeto de Conversor de Moedas na qual conta com uma taxa de atualização de 30s para melhor experiência!",
-    demo: "https://lazarin123.github.io/Conversor-de-Moedas-JS/",
-    git: "https://github.com/Lazarin123/Conversor-de-Moedas-JS",
-    image: "Image/conversor/conversor2.png",
-    imageModal: "Image/conversor/conversor1.png",
+    title: "PulseEngine Pro+",
+    tech: "ReactJS • TypeScript • BEM • CSS • NodeJS • Tailwind CSS",
+    desc: "O PulseEngine Pro+ resolve o desafio de agregação e exibição de dados de telemetria em ambientes distribuídos e microserviços. Com uma Arquitetura Orientada a Eventos (Event-Driven Architecture), o sistema estabelece uma conexão persistente e segura via WebSockets, garantindo atualizações instantâneas sem a necessidade de polling HTTP constante.",
+    demo: "https://pulse-engine-eta.vercel.app/",
+    git: "https://github.com/Lazarin123/Pulse-Engine",
+    image: "Imagem/PulseEnginePro+/PulseEnginePro.png",
+    imageModal: "Imagem/PulseEnginePro+/PulseEnginePro+.png",
   },
   //Projeto 8
   {
