@@ -99,8 +99,8 @@ const projectsData = [
     desc: "O PulseEngine Pro+ resolve o desafio de agregação e exibição de dados de telemetria em ambientes distribuídos e microserviços. Com uma Arquitetura Orientada a Eventos (Event-Driven Architecture), o sistema estabelece uma conexão persistente e segura via WebSockets, garantindo atualizações instantâneas sem a necessidade de polling HTTP constante.",
     demo: "https://pulse-engine-eta.vercel.app/",
     git: "https://github.com/Lazarin123/Pulse-Engine",
-    image: "Imagem/PulseEnginePro+/PulseEnginePro.png",
-    imageModal: "Imagem/PulseEnginePro+/PulseEnginePro+.png",
+    image: "Image/PulseEnginePro+/PulseEnginePro.png",
+    imageModal: "Image/PulseEnginePro+/PulseEnginePro+.png",
   },
   //Projeto 8
   {
