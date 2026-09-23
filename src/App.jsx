@@ -105,13 +105,13 @@ const projectsData = [
   //Projeto 8
   {
     id: 8,
-    title: "Jogo 2048",
-    tech: "JavaScript • HMTL • CSS/BEM",
-    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação, Projeto do jogo 2048 na qual conta com um jogo de quem faz mais pontos e muito bom para a evolução da lógica! Funciona apenas em Desktop (Computadores)",
-    demo: "https://lazarin123.github.io/js_2048_game/",
-    git: "https://github.com/Lazarin123/Projeto-Jogo-2048",
-    image: "Image/2048/2048-1.png",
-    imageModal: "Image/2048/2048-1.png",
+    title: "Uptime Monitor Pro",
+    tech: "ReactJS • TypeScrpit • NodeJS • WebSocket",
+    desc: "Plataforma de diagnóstico e monitoramento de APIs/serviços. Você cadastra uma URL, e o sistema passa a checá-la periodicamente — medindo status, latência, headers de resposta e validade do certificado SSL — com um dashboard que atualiza sozinho em tempo real via WebSocket.",
+    demo: "https://uptime-monitor-pro-eta.vercel.app/",
+    git: "https://github.com/Lazarin123/Uptime-Monitor-Pro",
+    image: "Image/UptimePro/Uptime-Pro.png",
+    imageModal: "Image/UptimePro/Uptime-Pro.png",
   },
   //Projeto 9
   {
