@@ -39,13 +39,13 @@ const projectsData = [
   //Projeto 2
   {
     id: 2,
-    title: "FlowState",
-    tech: "JavaScript • HTML • BEM",
-    desc: "Aplicação Pomodoro de produtividade. Desenvolvida para ajudar a todos a melhorarem seu jeito de estudar e evoluirem cada vez mais, projeto desenvolvido para praticar a lógica de programação na qual já tem ajudado mais de 30 pessoas!",
-    demo: "https://lazarin123.github.io/Projeto-FlowState/",
-    git: "https://github.com/Lazarin123/Projeto-FlowState",
-    image: "Image/flowState/FlowState2.png",
-    imageModal: "Image/flowState/FlowState1.png",
+    title: "Nox CRM PRO",
+    tech: "JavaScript • ReactJS • SQL • NodeJS • BEM/CSS",
+    desc: "O Nox CRM PRO é uma plataforma moderna de gestão empresarial desenvolvida para empresas de assistência técnica, prestadores de serviços e equipes comerciais. Gerencie clientes, ordens de serviço, orçamentos, financeiro e produtividade em uma única plataforma!",
+    demo: "https://nox-crm-pro.vercel.app/",
+    git: "https://github.com/Lazarin123/Nox-CRM-PRO",
+    image: "Image/NOX/NoxCRM.png",
+    imageModal: "Image/NOX/NoxCRM.png",
   },
   //Projeto 3
   {
