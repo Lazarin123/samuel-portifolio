@@ -16,6 +16,14 @@
   .front { background-color: var(--color-bg-panel); z-index: 2; }
   .back { transform: rotateY(180deg); background-color: var(--color-bg-panel); flex-direction: column; padding: 2rem; text-align: center; }
 
+  .img-placeholder {
+    width: 100%; height: 100%;
+  }
+
+  .img-placeholder img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+
   .magic-phrase { font-size: 1.2rem; font-weight: 700; font-style: italic; color: var(--color-text-primary); margin-bottom: 0.8rem; line-height: 1.4; }
   .magic-author { font-size: 0.9rem; color: var(--color-accent-gold); font-weight: 500;}
   .magic-prompt { font-size: 0.95rem; font-weight: 600; color: var(--color-accent-gold); letter-spacing: 0.5px; opacity: 0.9; cursor: pointer; animation: pulseText 2s infinite ease-in-out; }
