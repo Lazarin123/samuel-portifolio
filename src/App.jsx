@@ -144,6 +144,16 @@ const projectsData = [
     image: "Image/Ecommerce/Ecommerce.png",
     imageModal: "Image/Ecommerce/Ecommerce.png",
   },
+  //Projeto 12
+  {
+    id: 12,
+    title: "EventiPulse-API",
+    tech: "TypeScript • NodeJS • PostgreSQL • Drizzle • API",
+    desc: "EventPulse é um motor robusto de gerenciamento e disparo de webhooks desenvolvido em Node.js, TypeScript e Neon (PostgreSQL). Diferente de um CRUD comum, ele foca em engenharia de backend, garantindo entrega assíncrona confiável com tentativas automáticas (retries), backoff exponencial e segurança via assinaturas HMAC para endpoints de clientes.",
+    git: "https://github.com/Lazarin123/EventiPulse-BackEnd",
+    image: "Image/EventiPulse/EventiPulse2.jpg",
+    imageModal: "Image/EventiPulse/EventiPulse2.jpg",
+  },
 ];
 
 //--- HardSkills ---
