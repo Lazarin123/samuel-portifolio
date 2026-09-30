@@ -30,9 +30,9 @@ const projectsData = [
     id: 1,
     title: "Valoriza App",
     tech: "React • JavaScript • Sass • NodeJS • NSQL",
-    desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema. Link demo e Git não funcionam pois não está no ar!",
+    desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema. Link demo não está no ar por questões de infraestrutura e investimentos!",
     demo: "#",
-    git: "#",
+    git: "https://github.com/Lazarin123/Valoriza-APP",
     image: "Image/Valoriza/Valoriza-1.png",
     imageModal: "Image/Valoriza/Valoriza-2.png",
   },
@@ -123,6 +123,16 @@ const projectsData = [
     git: "https://github.com/Lazarin123/Habit-Tracker-Pro",
     image: "Image/Habit-Tracker/Habit-Tracker.png",
     imageModal: "Image/Habit-Tracker/Habit-Tracker.png",
+  },
+  //Projeto 10
+  {
+    id: 10,
+    title: "Async Invoice Service",
+    tech: "TypeScript • NodeJS • BullMQ • API",
+    desc: "Desenvolvi um BackEnd de um microsserviço escalável e de alta performance focado no processamento assíncrono de tarefas exigentes. Este projeto nasceu para evitar que a geração de ficheiros pesados (como faturas e relatórios) bloqueie a API principal e prejudique a experiência do utilizador.",
+    git: "https://github.com/Lazarin123/async-invoice-service",
+    image: "Image/Async/async.png",
+    imageModal: "Image/Async/async.png",
   },
 ];
 
