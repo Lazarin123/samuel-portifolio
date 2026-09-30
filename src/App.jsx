@@ -134,6 +134,16 @@ const projectsData = [
     image: "Image/Async/async.png",
     imageModal: "Image/Async/async.png",
   },
+  //Projeto 11
+  {
+    id: 11,
+    title: "Ecommerce BackEnd API",
+    tech: "TypeScript • NodeJS • PostgreSQL • Prisma",
+    desc: "E-Commerce Backend com Controle de Estoque Atômico API RESTful de alta confiabilidade desenvolvida para sistemas de comércio eletrónico, projetada especificamente para eliminar falhas de concorrência e over-selling (venda além do estoque disponível).",
+    git: "https://github.com/Lazarin123/Estoque-BackEnd",
+    image: "Image/Ecommerce/Ecommerce.png",
+    imageModal: "Image/Ecommerce/Ecommerce.png",
+  },
 ];
 
 //--- HardSkills ---
