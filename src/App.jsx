@@ -50,13 +50,12 @@ const projectsData = [
   //Projeto 3
   {
     id: 3,
-    title: "Caixa Eletrônico - C",
-    tech: "C",
-    desc: "Projeto desenvolvido na Linguagem C de simulador de caixa eletrônico, na qual foi aplicado a lógica e estruturas para o sistema, um projeto na qual evolui e aprimorei meus conhecimentos em Lógica de Programação e Linguagem C",
-    demo: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
-    git: "https://github.com/Lazarin123/Simulador-Caixa-Eletronico",
-    image: "Image/caixa/Simulador-Caixa.png",
-    imageModal: "Image/caixa/Simulador-Caixa.png",
+    title: "Equivault API",
+    tech: "NodeJS • TypeScript • PostgreSQL • ZOD",
+    desc: "Equivault é uma API de finanças colaborativas desenvolvida com Node.js, TypeScript e Clean Architecture. Ela gerencia despesas multi-moeda com cotação em tempo real e aplica um algoritmo inteligente de otimização de fluxo de caixa para simplificar transferências em grupo.",
+    git: "https://github.com/Lazarin123/Equivault-API",
+    image: "Image/equivault/EquivaultAPI.jpg",
+    imageModal: "Image/equivault/EquivaultAPI.jpg",
   },
   //Projeto 4
   {
