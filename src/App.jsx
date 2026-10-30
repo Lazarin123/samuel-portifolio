@@ -164,6 +164,28 @@ const projectsData = [
     image: "Image/Encurtador/Encurtador.png",
     imageModal: "Image/Encurtador/Encurtador.png",
   },
+  //Projeto 14
+  {
+    id: 14,
+    title: "LeadConnector-API",
+    tech: "SQLLite • Express • NodeJS • LGPD • API",
+    desc: "LeadConnector API: mini CRM para captura de leads. Recebe os dados de formulários de contato, organiza os contatos em um funil de vendas (Novo, Em Contato, Convertido) e oferece rotas protegidas para listagem, métricas e exportação. Inclui painel visual e formulário pronto para landing pages.",
+    demo: "https://leadconnector-api.onrender.com",
+    git: "https://github.com/Lazarin123/LeadConnector-API",
+    image: "Image/lead-connector/kanban-leadconnector.png",
+    imageModal: "Image/lead-connector/kanban-leadconnector.png",
+  },
+  //Projeto 15
+  {
+    id: 15,
+    title: "Shortlink-API",
+    tech: "SQLLite • Express • NodeJS • API",
+    desc: "ShortLink API: encurtador de URLs com métricas. Converte links longos em links curtos personalizados e registra cliques, origem, dispositivo e navegador, com visitantes únicos calculados de forma anônima (LGPD-friendly). Inclui front-end de demonstração e deploy simplificado.",
+    demo: "https://shortlink-api-2sj1.onrender.com/",
+    git: "https://github.com/Lazarin123/Shortlink-API",
+    image: "Image/Encurtador/Encurtador.png",
+    imageModal: "Image/Encurtador/Encurtador.png",
+  },
 ];
 
 //--- HardSkills ---
