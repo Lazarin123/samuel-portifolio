@@ -178,13 +178,13 @@ const projectsData = [
   //Projeto 15
   {
     id: 15,
-    title: "Shortlink-API",
+    title: "EM DESENVOLVIMENTO",
     tech: "SQLLite • Express • NodeJS • API",
-    desc: "ShortLink API: encurtador de URLs com métricas. Converte links longos em links curtos personalizados e registra cliques, origem, dispositivo e navegador, com visitantes únicos calculados de forma anônima (LGPD-friendly). Inclui front-end de demonstração e deploy simplificado.",
-    demo: "https://shortlink-api-2sj1.onrender.com/",
-    git: "https://github.com/Lazarin123/Shortlink-API",
-    image: "Image/Encurtador/Encurtador.png",
-    imageModal: "Image/Encurtador/Encurtador.png",
+    desc: "DESENVOLVENDO UM NOVO SISTEMA/API/PROJETO",
+    demo: "",
+    git: "",
+    image: "Image1",
+    imageModal: "Image1",
   },
 ];
 
