@@ -153,6 +153,17 @@ const projectsData = [
     image: "Image/EventiPulse/EventiPulse2.jpg",
     imageModal: "Image/EventiPulse/EventiPulse2.jpg",
   },
+  //Projeto 13
+  {
+    id: 13,
+    title: "Shortlink-API",
+    tech: "SQLLite • Express • NodeJS • API",
+    desc: "ShortLink API: encurtador de URLs com métricas. Converte links longos em links curtos personalizados e registra cliques, origem, dispositivo e navegador, com visitantes únicos calculados de forma anônima (LGPD-friendly). Inclui front-end de demonstração e deploy simplificado.",
+    demo: "https://shortlink-api-2sj1.onrender.com/",
+    git: "https://github.com/Lazarin123/Shortlink-API",
+    image: "Image/Encurtador/Encurtador.png",
+    imageModal: "Image/Encurtador/Encurtador.png",
+  },
 ];
 
 //--- HardSkills ---
