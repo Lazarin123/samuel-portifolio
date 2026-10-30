@@ -178,13 +178,13 @@ const projectsData = [
   //Projeto 15
   {
     id: 15,
-    title: "EM DESENVOLVIMENTO",
-    tech: "SQLLite • Express • NodeJS • API",
-    desc: "DESENVOLVENDO UM NOVO SISTEMA/API/PROJETO",
-    demo: "",
-    git: "",
-    image: "Image1",
-    imageModal: "Image1",
+    title: "SplitMoney-API",
+    tech: "Fastify • TypeScript • PostgreSQL • API",
+    desc: "O SplitMoney API é uma solução back-end RESTful desenvolvida para simplificar a gestão e o rateio de despesas compartilhadas em grupo (como viagens, eventos, moradia ou jantares). Inspirado em plataformas como o Splitwise, o sistema permite criar grupos de gastos, gerenciar participantes e registrar transações com divisões automáticas ou personalizadas.",
+    demo: "https://splitmoney-fnfd.onrender.com",
+    git: "https://github.com/Lazarin123/SplitMoney",
+    image: "Image/splitmoney/SplitMoney.png",
+    imageModal: "Image/splitmoney/SplitMoney.png",
   },
 ];
 
