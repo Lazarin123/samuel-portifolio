@@ -8,6 +8,28 @@ import {
   useMotionValue,
 } from "framer-motion";
 
+/**
+ * IntroAnima — "A fenda"
+ *
+ * Uma linha de luz risca a tela e o título é cortado ao meio por ela.
+ * Ao rolar, as duas metades se afastam e a luz escorre pela abertura.
+ *
+ * Por que é leve:
+ *  - Só anima `transform` e `opacity` (rodam na GPU, sem reflow/repaint).
+ *  - Nenhum `filter: blur` animado (era o maior custo da versão anterior).
+ *  - A camada fixa não bloqueia cliques (`pointer-events: none`) e é
+ *    escondida (`visibility: hidden`) assim que a intro termina.
+ *  - Usa `position: fixed` em vez de `sticky`, então funciona mesmo se algum
+ *    elemento pai do seu site tiver `overflow: hidden`.
+ *  - Entradas e indicador de scroll são CSS puro (zero JS por frame).
+ *  - Animações infinitas pausam quando a intro sai da tela.
+ *  - Respeita `prefers-reduced-motion`.
+ *
+ * Uso:
+ *   <IntroAnima />
+ *   <SuaProximaSecao />
+ */
+
 // Suaviza o movimento das cortinas (ease in-out)
 const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
 
@@ -137,15 +159,13 @@ const css = `
   min-height: 0;
   margin: 0;
   padding: 0;
-  /* 100svh de rolagem "pinada" + 100svh da própria tela */
-  height: 210vh;
-  height: 210svh;
-  /* A próxima seção (hero) começa 100svh antes do fim e sobe por trás das metades */
+  /* 115svh de rolagem da intro + 100svh da própria tela */
+  height: 215vh;
+  height: 215svh;
+  /* O hero começa 100svh antes do fim: fica SEMPRE abaixo da primeira tela
+     (>100svh) e sobe por trás das metades enquanto elas abrem */
   margin-bottom: -100vh;
   margin-bottom: -100svh;
-}
-@media (max-width: 640px) {
-  .ia-section { height: 190vh; height: 190svh; }
 }
 .ia-section.ia-static {
   height: 100vh;
@@ -156,13 +176,12 @@ const css = `
 .ia-stage {
   position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  height: 100svh;
   overflow: hidden;
   contain: layout paint;
   isolation: isolate;
@@ -170,7 +189,12 @@ const css = `
   pointer-events: none;
 }
 .ia-stage.ia-done { visibility: hidden; }
-.ia-static .ia-stage { position: relative; }
+.ia-static .ia-stage {
+  position: relative;
+  bottom: auto;
+  height: 100vh;
+  height: 100svh;
+}
  
 /* Luz */
 .ia-glow {
