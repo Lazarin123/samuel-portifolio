@@ -1,3 +1,308 @@
+// //--- Imports ---
+// import React, { useState, useEffect } from "react";
+
+// // Estilos Globais
+// import "./styles/App.scss";
+
+// //importação do Lenis
+// import Lenis from "lenis";
+
+// // Imagens de fundo
+// import bgImageDark from "./assets/fundoDark.png";
+// import bgImageLight from "./assets/fundoClaro.png";
+
+// // Componentes
+// import Navbar from "./components/Navbar/Navbar";
+// import IntroAnima from "./components/IntroAnima/IntroAnima";
+// import Home from "./components/Home/Home";
+// import About from "./components/About/About";
+// import Skills from "./components/Skills/Skills";
+// import Projects from "./components/Projects/Projects";
+// import Contact from "./components/Contact/Contact";
+// import Footer from "./components/Footer/Footer";
+// import Modal from "./components/modal/Modal";
+// import ThemeToggle from "./components/TheToggle/ThemeToggle";
+
+// // --- MOCK DE DADOS - Projects ---
+// const projectsData = [
+//   //Projeto 1
+//   {
+//     id: 1,
+//     title: "Valoriza App",
+//     tech: "React • JavaScript • Sass • NodeJS • NSQL",
+//     desc: "Plataforma completa de planejamento financeiro. Desenvolvida para auxiliar e ajudar as pessoas a economizarem e melhorarem suas vidas financeiras através desse sistema. Link demo não está no ar por questões de infraestrutura e investimentos!",
+//     demo: "#",
+//     git: "https://github.com/Lazarin123/Valoriza-APP",
+//     image: "Image/Valoriza/Valoriza-1.png",
+//     imageModal: "Image/Valoriza/Valoriza-2.png",
+//   },
+//   //Projeto 2
+//   {
+//     id: 2,
+//     title: "Nox CRM PRO",
+//     tech: "JavaScript • ReactJS • SQL • NodeJS • BEM/CSS",
+//     desc: "O Nox CRM PRO é uma plataforma moderna de gestão empresarial desenvolvida para empresas de assistência técnica, prestadores de serviços e equipes comerciais. Gerencie clientes, ordens de serviço, orçamentos, financeiro e produtividade em uma única plataforma!",
+//     demo: "https://nox-crm-pro.vercel.app/",
+//     git: "https://github.com/Lazarin123/Nox-CRM-PRO",
+//     image: "Image/NOX/NoxCRM.png",
+//     imageModal: "Image/NOX/NoxCRM.png",
+//   },
+//   //Projeto 3
+//   {
+//     id: 3,
+//     title: "Equivault API",
+//     tech: "NodeJS • TypeScript • PostgreSQL • ZOD",
+//     desc: "Equivault é uma API de finanças colaborativas desenvolvida com Node.js, TypeScript e Clean Architecture. Ela gerencia despesas multi-moeda com cotação em tempo real e aplica um algoritmo inteligente de otimização de fluxo de caixa para simplificar transferências em grupo.",
+//     git: "https://github.com/Lazarin123/Equivault-API",
+//     image: "Image/equivault/EquivaultAPI.jpg",
+//     imageModal: "Image/equivault/EquivaultAPI.jpg",
+//   },
+//   //Projeto 4
+//   {
+//     id: 4,
+//     title: "Carnivoros e Herbivoros",
+//     tech: "JavaScript • Lógica de Programação",
+//     desc: "Projeto voltado para o desenvolvimento BackEnd, de um jogo de Carnivoros e Herbivoros na qual foi aplicado a lógica de programação para o desenvolvimento do projeto!",
+//     demo: "https://github.com/Lazarin123/js_herbivores_and_carnivores",
+//     git: "https://github.com/Lazarin123/js_herbivores_and_carnivores",
+//     image: "Image/CH/Carnivoros e Herbivoros.png",
+//     imageModal: "Image/CH/Carnivoros e Herbivoros.png",
+//   },
+//   //Projeto 5
+//   {
+//     id: 5,
+//     title: "My Bike - Landing Page",
+//     tech: "JavaScript • HMTL • CSS/BEM",
+//     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, e praticar a lógica de programação no desenvolvimento FrontEnd Vanilla, Projeto de LandingPage para a empresa MyBike na qual evolui muito com esse desenvolvimento!",
+//     demo: "https://lazarin123.github.io/layout_landing-page/",
+//     git: "https://github.com/Lazarin123/Landing-Page",
+//     image: "Image/MyBike/MyBike.png",
+//     imageModal: "Image/MyBike/MyBike1.png",
+//   },
+//   //Projeto 6
+//   {
+//     id: 6,
+//     title: "PokeDex",
+//     tech: "JavaScript • HMTL • CSS/BEM • API",
+//     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Integração de APIS e praticar a lógica de programação no desenvolvimento FrontEnd Vanilla, Projeto de PokeDex na qual evolui muito com esse desenvolvimento!",
+//     demo: "https://lazarin123.github.io/PokeDex-JS/",
+//     git: "https://github.com/Lazarin123/PokeDex-JS",
+//     image: "Image/pokedex/PokeDex2.png",
+//     imageModal: "Image/pokedex/PokeDex.1.png",
+//   },
+//   //Projeto 7
+//   {
+//     id: 7,
+//     title: "PulseEngine Pro+",
+//     tech: "ReactJS • TypeScript • BEM • CSS • NodeJS • Tailwind CSS",
+//     desc: "O PulseEngine Pro+ resolve o desafio de agregação e exibição de dados de telemetria em ambientes distribuídos e microserviços. Com uma Arquitetura Orientada a Eventos (Event-Driven Architecture), o sistema estabelece uma conexão persistente e segura via WebSockets, garantindo atualizações instantâneas sem a necessidade de polling HTTP constante.",
+//     demo: "https://pulse-engine-eta.vercel.app/",
+//     git: "https://github.com/Lazarin123/Pulse-Engine",
+//     image: "Image/PulseEnginePro+/PulseEnginePro.png",
+//     imageModal: "Image/PulseEnginePro+/PulseEnginePro+.png",
+//   },
+//   //Projeto 8
+//   {
+//     id: 8,
+//     title: "Uptime Monitor Pro",
+//     tech: "ReactJS • TypeScrpit • NodeJS • WebSocket",
+//     desc: "Plataforma de diagnóstico e monitoramento de APIs/serviços. Você cadastra uma URL, e o sistema passa a checá-la periodicamente — medindo status, latência, headers de resposta e validade do certificado SSL — com um dashboard que atualiza sozinho em tempo real via WebSocket.",
+//     demo: "https://uptime-monitor-pro-eta.vercel.app/",
+//     git: "https://github.com/Lazarin123/Uptime-Monitor-Pro",
+//     image: "Image/UptimePro/Uptime-Pro.png",
+//     imageModal: "Image/UptimePro/Uptime-Pro.png",
+//   },
+//   //Projeto 9
+//   {
+//     id: 9,
+//     title: "Habit Tracker Pro",
+//     tech: "JavaScript • HMTL • CSS/BEM • API",
+//     desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Lógica de programação e APIs, Projeto de contador de Hábitos para sua melhor qualidade e evolução constante!",
+//     demo: "https://habit-tracker-pro-ten.vercel.app/",
+//     git: "https://github.com/Lazarin123/Habit-Tracker-Pro",
+//     image: "Image/Habit-Tracker/Habit-Tracker.png",
+//     imageModal: "Image/Habit-Tracker/Habit-Tracker.png",
+//   },
+//   //Projeto 10
+//   {
+//     id: 10,
+//     title: "Async Invoice Service",
+//     tech: "TypeScript • NodeJS • BullMQ • API",
+//     desc: "Desenvolvi um BackEnd de um microsserviço escalável e de alta performance focado no processamento assíncrono de tarefas exigentes. Este projeto nasceu para evitar que a geração de ficheiros pesados (como faturas e relatórios) bloqueie a API principal e prejudique a experiência do utilizador.",
+//     git: "https://github.com/Lazarin123/async-invoice-service",
+//     image: "Image/Async/async.png",
+//     imageModal: "Image/Async/async.png",
+//   },
+//   //Projeto 11
+//   {
+//     id: 11,
+//     title: "Ecommerce BackEnd API",
+//     tech: "TypeScript • NodeJS • PostgreSQL • Prisma",
+//     desc: "E-Commerce Backend com Controle de Estoque Atômico API RESTful de alta confiabilidade desenvolvida para sistemas de comércio eletrónico, projetada especificamente para eliminar falhas de concorrência e over-selling (venda além do estoque disponível).",
+//     git: "https://github.com/Lazarin123/Estoque-BackEnd",
+//     image: "Image/Ecommerce/Ecommerce.png",
+//     imageModal: "Image/Ecommerce/Ecommerce.png",
+//   },
+//   //Projeto 12
+//   {
+//     id: 12,
+//     title: "EventiPulse-API",
+//     tech: "TypeScript • NodeJS • PostgreSQL • Drizzle • API",
+//     desc: "EventPulse é um motor robusto de gerenciamento e disparo de webhooks desenvolvido em Node.js, TypeScript e Neon (PostgreSQL). Diferente de um CRUD comum, ele foca em engenharia de backend, garantindo entrega assíncrona confiável com tentativas automáticas (retries), backoff exponencial e segurança via assinaturas HMAC para endpoints de clientes.",
+//     git: "https://github.com/Lazarin123/EventiPulse-BackEnd",
+//     image: "Image/EventiPulse/EventiPulse2.jpg",
+//     imageModal: "Image/EventiPulse/EventiPulse2.jpg",
+//   },
+//   //Projeto 13
+//   {
+//     id: 13,
+//     title: "Shortlink-API",
+//     tech: "SQLLite • Express • NodeJS • API",
+//     desc: "ShortLink API: encurtador de URLs com métricas. Converte links longos em links curtos personalizados e registra cliques, origem, dispositivo e navegador, com visitantes únicos calculados de forma anônima (LGPD-friendly). Inclui front-end de demonstração e deploy simplificado.",
+//     demo: "https://shortlink-api-2sj1.onrender.com/",
+//     git: "https://github.com/Lazarin123/Shortlink-API",
+//     image: "Image/Encurtador/Encurtador.png",
+//     imageModal: "Image/Encurtador/Encurtador.png",
+//   },
+//   //Projeto 14
+//   {
+//     id: 14,
+//     title: "LeadConnector-API",
+//     tech: "SQLLite • Express • NodeJS • LGPD • API",
+//     desc: "LeadConnector API: mini CRM para captura de leads. Recebe os dados de formulários de contato, organiza os contatos em um funil de vendas (Novo, Em Contato, Convertido) e oferece rotas protegidas para listagem, métricas e exportação. Inclui painel visual e formulário pronto para landing pages.",
+//     demo: "https://leadconnector-api.onrender.com",
+//     git: "https://github.com/Lazarin123/LeadConnector-API",
+//     image: "Image/lead-connector/kanban-leadconnector.png",
+//     imageModal: "Image/lead-connector/kanban-leadconnector.png",
+//   },
+//   //Projeto 15
+//   {
+//     id: 15,
+//     title: "SplitMoney-API",
+//     tech: "Fastify • TypeScript • PostgreSQL • API",
+//     desc: "O SplitMoney API é uma solução back-end RESTful desenvolvida para simplificar a gestão e o rateio de despesas compartilhadas em grupo (como viagens, eventos, moradia ou jantares). Inspirado em plataformas como o Splitwise, o sistema permite criar grupos de gastos, gerenciar participantes e registrar transações com divisões automáticas ou personalizadas.",
+//     demo: "https://splitmoney-fnfd.onrender.com",
+//     git: "https://github.com/Lazarin123/SplitMoney",
+//     image: "Image/splitmoney/SplitMoney.png",
+//     imageModal: "Image/splitmoney/SplitMoney.png",
+//   },
+// ];
+
+// //--- HardSkills ---
+// const hardSkillsData = [
+//   { name: "React + TypeScript", percent: 78 },
+//   { name: "JavaScript & DOM", percent: 89 },
+//   { name: "C# & .NET", percent: 67 },
+//   { name: "Sass & BEM", percent: 95 },
+//   { name: "Node.js", percent: 67 },
+//   { name: "SQL", percent: 68 },
+// ];
+
+// //--- SoftSkills ---
+// const softSkillsData = [
+//   { name: "skills.comunicacao", percent: 89 },
+//   { name: "skills.trabalho_em_equipe", percent: 89 },
+//   { name: "skills.resolucao_de_problemas", percent: 87 },
+//   { name: "skills.criatividade", percent: 76 },
+//   { name: "skills.visao_de_produto", percent: 75 },
+//   { name: "skills.atencao_ao_detalhes", percent: 70 },
+// ];
+
+// export default function App() {
+//   const [theme, setTheme] = useState(
+//     () => localStorage.getItem("theme") || "dark",
+//   );
+//   const [selectedProject, setSelectedProject] = useState(null);
+//   const [activeSection, setActiveSection] = useState("");
+
+//   //--- Configuração Scroll Suave (Lenis) ---
+//   useEffect(() => {
+//     const lenis = new Lenis({
+//       duration: 1.2, // Duração do "deslizamento" (quanto maior, mais lento)
+//       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Curva de aceleração suave
+//       smoothWheel: true,
+//     });
+
+//     // Função para manter a animação rodando sincronizada com o monitor
+//     function raf(time) {
+//       lenis.raf(time);
+//       requestAnimationFrame(raf);
+//     }
+
+//     requestAnimationFrame(raf);
+
+//     // Limpeza ao desmontar o componente
+//     return () => {
+//       lenis.destroy();
+//     };
+//   }, []);
+//   // ==========================================
+
+//   useEffect(() => {
+//     if (theme === "light") {
+//       document.documentElement.setAttribute("data-theme", "light");
+//     } else {
+//       document.documentElement.removeAttribute("data-theme");
+//     }
+//     localStorage.setItem("theme", theme);
+//   }, [theme]);
+
+//   const toggleTheme = () =>
+//     setTheme((prev) => (prev === "light" ? "dark" : "light"));
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const sections = document.querySelectorAll("section");
+//       let current = "";
+//       sections.forEach((section) => {
+//         if (window.scrollY >= section.offsetTop - 150) {
+//           current = section.getAttribute("id");
+//         }
+//       });
+//       setActiveSection(current);
+//     };
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   return (
+//     <>
+//       {/* 1. A ANIMAÇÃO ISOLADA: Fica no topo dando o espaço do scroll */}
+//       <IntroAnima />
+
+//       {/* 2. SEU SITE ORIGINAL: Exatamente como era, sem divs por volta quebrando o CSS */}
+//       <div className="global-bg">
+//         <img
+//           key={theme}
+//           src={theme === "light" ? bgImageLight : bgImageDark}
+//           alt=""
+//           aria-hidden="true"
+//           className="global-bg__image"
+//         />
+//         <div className="global-bg__overlay"></div>
+//       </div>
+
+//       <Navbar activeSection={activeSection} />
+
+//       <main className="main-content-wrapper">
+//         <Home />
+//         <About />
+//         <Projects data={projectsData} onProjectClick={setSelectedProject} />
+//         <Skills hardSkills={hardSkillsData} softSkills={softSkillsData} />
+//         <Contact />
+//       </main>
+
+//       <Footer theme={theme} toggleTheme={toggleTheme} />
+
+//       <Modal
+//         project={selectedProject}
+//         onClose={() => setSelectedProject(null)}
+//       />
+//       <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+//     </>
+//   );
+// }
+
 //--- Imports ---
 import React, { useState, useEffect } from "react";
 
@@ -7,9 +312,9 @@ import "./styles/App.scss";
 //importação do Lenis
 import Lenis from "lenis";
 
-// Vídeos de fundo
-import bgVideoDark from "./assets/loopFundoDark.mp4";
-import bgVideoLight from "./assets/loopFundoClaro.mp4";
+// images de fundo
+import bgImageDark from "./assets/modoDark.jpg";
+import bgImageLight from "./assets/modoWhite.jpg";
 
 // Componentes
 import Navbar from "./components/Navbar/Navbar";
@@ -195,7 +500,7 @@ const hardSkillsData = [
   { name: "C# & .NET", percent: 67 },
   { name: "Sass & BEM", percent: 95 },
   { name: "Node.js", percent: 67 },
-  { name: "SQL", percent: 57 },
+  { name: "SQL", percent: 68 },
 ];
 
 //--- SoftSkills ---
@@ -272,19 +577,13 @@ export default function App() {
 
       {/* 2. SEU SITE ORIGINAL: Exatamente como era, sem divs por volta quebrando o CSS */}
       <div className="global-bg">
-        <video
+        <img
           key={theme}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="global-bg__video"
-        >
-          <source
-            src={theme === "light" ? bgVideoLight : bgVideoDark}
-            type="video/mp4"
-          />
-        </video>
+          src={theme === "light" ? bgImageLight : bgImageDark}
+          alt=""
+          aria-hidden="true"
+          className="global-bg__image"
+        />
         <div className="global-bg__overlay"></div>
       </div>
 
