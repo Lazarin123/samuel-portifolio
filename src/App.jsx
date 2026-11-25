@@ -82,13 +82,13 @@ const projectsData = [
   //Projeto 6
   {
     id: 6,
-    title: "PokeDex",
-    tech: "JavaScript • HMTL • CSS/BEM • API",
-    desc: "Projeto desenvolvido para desenvolver a parte de styles como Grid, FlexBox, Positions, Integração de APIS e praticar a lógica de programação no desenvolvimento FrontEnd Vanilla, Projeto de PokeDex na qual evolui muito com esse desenvolvimento!",
-    demo: "https://lazarin123.github.io/PokeDex-JS/",
-    git: "https://github.com/Lazarin123/PokeDex-JS",
-    image: "Image/pokedex/PokeDex2.png",
-    imageModal: "Image/pokedex/PokeDex.1.png",
+    title: "Nexora ERP",
+    tech: "JavaScript • HMTL • CSS/BEM • ERP",
+    desc: "Nexora ERP é uma aplicação de gestão local-first cuja interface, estilos e lógica principal estão reunidos em index.html. O pacote também oferece inicializador local em Python e um wrapper Electron para geração de aplicativos desktop.",
+    demo: "https://nexoraerp-six.vercel.app",
+    git: "https://github.com/Lazarin123/NEXORA-ERP",
+    image: "Image/nexora/NEXORA.png",
+    imageModal: "Image/nexora/NEXORA.png",
   },
   //Projeto 7
   {
